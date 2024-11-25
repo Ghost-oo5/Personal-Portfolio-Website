@@ -6,19 +6,32 @@ import { BsStar } from "react-icons/bs";
 const Footer = () => {
   return (
     <>
-      <footer className="footer w-screen bg-red-500 flex justify-between items-center px-20 ">
+      <footer className="footer w-screen bg-red-900 flex justify-between items-center px-20 ">
         <div>
-          Made with love by <Link href={"https://abdulbasit.dev"}>Basit</Link>
+          Made with ❤ by
+          <Link
+            href={"https://abdulbasit.dev"}
+            className="font-bold text-[#16f2b3]"
+          >
+            Basit
+          </Link>
         </div>
+        <h1>this is footer</h1>
         <div className="footerItems flex space-x-10">
-          <div className="Footer-item flex space-x-1 items-center">
-            {" "}
-            <BsStar /> Star
-          </div>
-          <div className="Footer-item flex space-x-1 items-center">
-            {" "}
-            <BiFork /> Fork
-          </div>
+          <Link
+            href={"https://github.com/abdulbasitdev"}
+            className="Footer-item flex space-x-1 items-center  uppercase"
+          >
+            <BsStar />
+            <p> Star</p>
+          </Link>
+          <Link
+            href={"https://github.com/abdulbasitdev"}
+            className="Footer-item flex space-x-1 items-center  uppercase"
+          >
+            <BiFork /> 
+            <p>Fork</p>
+          </Link>
         </div>
       </footer>
     </>
