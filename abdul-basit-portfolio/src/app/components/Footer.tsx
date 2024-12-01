@@ -6,7 +6,7 @@ import { BsStar } from "react-icons/bs";
 const Footer = () => {
   return (
     <>
-      <footer className="footer w-screen bg-red-900 flex justify-between items-center px-20 ">
+      <footer className="footer w-100% bg-red-900 flex justify-between items-center px-20 ">
         <div>
           Made with ❤ by
           <Link
