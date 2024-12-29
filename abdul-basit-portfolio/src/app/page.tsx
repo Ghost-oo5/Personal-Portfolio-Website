@@ -4,7 +4,7 @@ import Contact from "./components/pages/Contact/page";
 import Education from "./components/pages/education/page";
 import Experience from "./components/pages/experience/page";
 import HeroSection from "./components/pages/hero-section/page";
-import Projects from "./components/pages/Projects/page";
+import Projects from "./components/pages/Projects/index";
 import Skills from "./components/pages/Skills/page";
 
 import './css/card.css';
