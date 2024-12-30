@@ -1,6 +1,6 @@
 import About from "./components/pages/about/page";
 import Blogs from "./components/pages/Blogs/index";
-import Contact from "./components/pages/Contact/page";
+import Contact from "./components/pages/Contact/index";
 import Education from "./components/pages/education/page";
 import Experience from "./components/pages/experience/page";
 import HeroSection from "./components/pages/hero-section/page";
