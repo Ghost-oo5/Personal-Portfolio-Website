@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@google-recaptcha/react": "^1.2.3",
     "axios": "^1.7.9",
     "emailjs": "^4.0.3",
     "lottie-react": "^2.4.0",
@@ -25,6 +26,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-google-recaptcha": "^2.1.9",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",

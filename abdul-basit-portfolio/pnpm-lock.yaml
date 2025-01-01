@@ -11,6 +11,9 @@ importers:
       '@emailjs/browser':
         specifier: ^4.4.1
         version: 4.4.1
+      '@google-recaptcha/react':
+        specifier: ^1.2.3
+        version: 1.2.3(@types/react@18.3.18)(react@19.0.0-rc-66855b96-20241106)
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -51,6 +54,9 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.5(@types/react@18.3.18)
+      '@types/react-google-recaptcha':
+        specifier: ^2.1.9
+        version: 2.1.9
       eslint:
         specifier: ^8
         version: 8.57.1
@@ -97,6 +103,20 @@ packages:
   '@eslint/js@8.57.1':
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@google-recaptcha/core@1.0.5':
+    resolution: {integrity: sha512-PDkw/Q4V4qBKS9cOKRxdK6Ern4l4slondjKYqrJRBMMsMNIPfh87EHRT1YqxtzaMgH9HVRxxI7EUS1NB5z6/Cg==}
+    engines: {node: '>=14'}
+
+  '@google-recaptcha/react@1.2.3':
+    resolution: {integrity: sha512-o+iuo2kX3HBcrcelycTz3IOXQ7zC9YkP6EWcQb6fimoFjKDeSx4WDrkP1+9SwnpspO6UJs2VWVKq9HlxNFwG9A==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@types/react': ^18.0.0
+      react: ^17.0.2 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -337,6 +357,9 @@ packages:
     resolution: {integrity: sha512-P4t6saawp+b/dFrUr2cvkVsfvPguwsxtH6dNIYRllMsefqFzkZk5UIjzyDOv5g1dXIPdG4Sp1yCR4Z6RCUsG/Q==}
     peerDependencies:
       '@types/react': ^18.0.0
+
+  '@types/react-google-recaptcha@2.1.9':
+    resolution: {integrity: sha512-nT31LrBDuoSZJN4QuwtQSF3O89FVHC4jLhM+NtKEmVF5R1e8OY0Jo4//x2Yapn2aNHguwgX5doAq8Zo+Ehd0ug==}
 
   '@types/react@18.3.18':
     resolution: {integrity: sha512-t4yC+vtgnkYjNSKlFx1jkAhH8LgTo2N/7Qvi83kdEaUtMDiwpbLAktKDaAMlRcJ5eSxZkH74eEGt1ky31d7kfQ==}
@@ -1817,6 +1840,15 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
+  '@google-recaptcha/core@1.0.5': {}
+
+  '@google-recaptcha/react@1.2.3(@types/react@18.3.18)(react@19.0.0-rc-66855b96-20241106)':
+    dependencies:
+      '@google-recaptcha/core': 1.0.5
+      react: 19.0.0-rc-66855b96-20241106
+    optionalDependencies:
+      '@types/react': 18.3.18
+
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -1996,6 +2028,10 @@ snapshots:
   '@types/prop-types@15.7.14': {}
 
   '@types/react-dom@18.3.5(@types/react@18.3.18)':
+    dependencies:
+      '@types/react': 18.3.18
+
+  '@types/react-google-recaptcha@2.1.9':
     dependencies:
       '@types/react': 18.3.18
 
