@@ -1,22 +1,25 @@
 "use client";
 
-import Lottie from "lottie-react";
-interface AnimationLottieProps {
-  animationPath: object; // Specify the type of your animation data (e.g., JSON object).
-  width?: string | number; // Optional prop with either a string or number type.
-}
-const AnimationLottie = ({ animationPath }:AnimationLottieProps) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationPath,
-    style: {
-      width: '95%',
-    }
-  };
+import dynamic from "next/dynamic";
 
+// Dynamically import the Lottie component with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
+interface AnimationLottieProps {
+  animationPath: object; // JSON object for the animation data.
+  width?: string | number; // Optional width prop for customization.
+}
+
+const AnimationLottie = ({ animationPath, width = "95%" }: AnimationLottieProps) => {
   return (
-    <Lottie {...defaultOptions} />
+    <div style={{ width }}>
+      <Lottie
+        animationData={animationPath}
+        loop
+        autoplay
+        style={{ width: "100%", height: "auto" }}
+      />
+    </div>
   );
 };
 

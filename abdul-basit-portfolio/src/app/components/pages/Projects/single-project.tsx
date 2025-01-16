@@ -84,7 +84,7 @@ const SingleProject = ({ project }:props) => {
         {description}
       </p>
       <div className='group-hover:translate-x-0 absolute w-[140px] text-[0.8rem] flex justify-center gap-2 flex-col translate-x-full transition-transform duration-[0.5s] delay-[0.3s] p-[0.825rem] rounded-[10px_0_0_10px] right-0 bottom-4 bg-[#0f0b24] text-[#EFF3F4]'>
-        {tags.map((tag:any, id:number) => (
+        {tags.map((tag:string, id:number) => (
           <span className='font-medium break-words text-xs' key={id}>
             {tag}
           </span>

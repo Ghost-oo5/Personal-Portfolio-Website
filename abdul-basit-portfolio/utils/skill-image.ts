@@ -74,7 +74,7 @@ import wolframalpha from '../public/public/svg/skills/wolframalpha.svg';
 import wordpress from '../public/public/svg/skills/wordpress.svg';
 
 
-export const skillsImage = (skill) => {
+export const skillsImage = (skill:string) => {
   const skillID = skill.toLowerCase();
   switch (skillID) {
     case 'gcp':

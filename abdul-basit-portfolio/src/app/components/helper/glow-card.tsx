@@ -1,10 +1,22 @@
-"use client"
-import { useEffect } from 'react';
+"use client";
+import { ReactNode, useEffect } from "react";
 
-const GlowCard = ({ children , identifier}) => {
+interface GlowCardProps {
+  children: ReactNode;
+  identifier: string;
+}
+
+const GlowCard = ({ children, identifier }: GlowCardProps) => {
   useEffect(() => {
-    const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
-    const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
+    // Ensure this code runs only in the client-side
+    if (typeof window === "undefined" || typeof document === "undefined") return;
+
+    const CONTAINER = document.querySelector(
+      `.glow-container-${identifier}`
+    ) as HTMLElement | null;
+    const CARDS = document.querySelectorAll(
+      `.glow-card-${identifier}`
+    ) as NodeListOf<HTMLElement>;
 
     const CONFIG = {
       proximity: 40,
@@ -15,8 +27,8 @@ const GlowCard = ({ children , identifier}) => {
       opacity: 0,
     };
 
-    const UPDATE = (event) => {
-      for (const CARD of CARDS) {
+    const UPDATE = (event: MouseEvent) => {
+      CARDS.forEach((CARD) => {
         const CARD_BOUNDS = CARD.getBoundingClientRect();
 
         if (
@@ -25,9 +37,9 @@ const GlowCard = ({ children , identifier}) => {
           event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
           event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
         ) {
-          CARD.style.setProperty('--active', 1);
+          CARD.style.setProperty("--active", "1");
         } else {
-          CARD.style.setProperty('--active', CONFIG.opacity);
+          CARD.style.setProperty("--active", CONFIG.opacity.toString());
         }
 
         const CARD_CENTER = [
@@ -42,34 +54,43 @@ const GlowCard = ({ children , identifier}) => {
 
         ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
 
-        CARD.style.setProperty('--start', ANGLE + 90);
+        CARD.style.setProperty("--start", `${ANGLE + 90}`);
+      });
+    };
+
+    document.body.addEventListener("pointermove", UPDATE);
+
+    const RESTYLE = () => {
+      if (CONTAINER) {
+        CONTAINER.style.setProperty("--gap", CONFIG.gap.toString());
+        CONTAINER.style.setProperty("--blur", CONFIG.blur.toString());
+        CONTAINER.style.setProperty("--spread", CONFIG.spread.toString());
+        CONTAINER.style.setProperty(
+          "--direction",
+          CONFIG.vertical ? "column" : "row"
+        );
       }
     };
 
-    document.body.addEventListener('pointermove', UPDATE);
-
-    const RESTYLE = () => {
-      CONTAINER.style.setProperty('--gap', CONFIG.gap);
-      CONTAINER.style.setProperty('--blur', CONFIG.blur);
-      CONTAINER.style.setProperty('--spread', CONFIG.spread);
-      CONTAINER.style.setProperty(
-        '--direction',
-        CONFIG.vertical ? 'column' : 'row'
-      );
-    };
-
     RESTYLE();
-    UPDATE();
+    // Initial update to set styles on load
+    const initialEvent = new MouseEvent("pointermove", {
+      clientX: window.innerWidth / 2,
+      clientY: window.innerHeight / 2,
+    });
+    UPDATE(initialEvent);
 
     // Cleanup event listener
     return () => {
-      document.body.removeEventListener('pointermove', UPDATE);
+      document.body.removeEventListener("pointermove", UPDATE);
     };
   }, [identifier]);
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
-      <article className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}>
+      <article
+        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}
+      >
         <div className="glows"></div>
         {children}
       </article>

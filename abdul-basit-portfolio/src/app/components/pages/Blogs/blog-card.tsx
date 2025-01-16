@@ -5,9 +5,20 @@ import Link from 'next/link';
 import { BsHeartFill } from 'react-icons/bs';
 import { FaCommentAlt } from 'react-icons/fa';
 
+interface Blog {
+  cover_image: string;
+  published_at: string;
+  public_reactions_count: number;
+  comments_count: number;
+  url: string;
+  title: string;
+  reading_time_minutes: number;
+  description: string;
+}
+
 export interface BlogProps
 {
-  blog:any;
+  blog:Blog;
 }
 function BlogCard({ blog }:BlogProps) {
 

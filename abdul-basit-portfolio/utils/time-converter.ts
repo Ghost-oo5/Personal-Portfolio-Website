@@ -1,4 +1,4 @@
-export function timeConverter(isoTime) {
+export function timeConverter(isoTime:string) {
   const currentTime = new Date().getTime();
   const pastTime = new Date(isoTime).getTime();
   const timeDifference = currentTime - pastTime;
