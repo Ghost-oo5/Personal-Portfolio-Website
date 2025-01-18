@@ -21,22 +21,16 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: "/Logo-v1-white.png",
+        src: "/Logo-v1-black.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/Logo-v1-white.png",
+        src: "/Logo-v1-black.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "maskable",
-      },
-      {
-        src: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any",
       },
       {
         src: "/Logo-v1-white.png",
