@@ -1,62 +1,77 @@
-'use client'
-import Link from "next/link";
+'use client';
+import Image from "next/image";
 import React, { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
+import img from '../../../public/Logo-v1-white.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-    <nav className="sticky top-0 z-[9999]  backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
-    <div className="flex justify-between py-5 items-center">
-          {/* Logo */}
-          <div className="logo pl-2 sm:pl-5">
-            <Link
-              href="/"
-              className="text-[#16f2b3] hover:text-green-500 transition-colors duration-300 text-2xl sm:text-3xl font-bold"
+      <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
+        <div className="flex justify-between py-5 items-center">
+          <div className="logo pl-5 md:ml-5 sm:pl-5">
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer"
             >
-              Unknown Coder
-            </Link>
+              <Image src={img} alt="Abdul Basit" id="logo" className="" width={100} height={100}/>
+            </ScrollLink>
           </div>
 
           {/* Desktop Navbar */}
-          <div className="hidden md:flex navbarItems space-x-5 text-lg items-center">
-            <Link
-              href="#about"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+          <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-2xl items-center">
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               About
-            </Link>
-            <Link
-              href="#experience"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="experience"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Experience
-            </Link>
-            <Link
-              href="#education"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="education"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Education
-            </Link>
-            <Link
-              href="#skills"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Skills
-            </Link>
-            <Link
-              href="#blogs"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="blogs"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Blogs
-            </Link>
-            <Link
-              href="#projects"
-              className="transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Projects
-            </Link>
+            </ScrollLink>
           </div>
 
           {/* Hamburger Menu Icon */}
@@ -94,49 +109,64 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-800 p-5 space-y-4">
-            <Link
-              href="/components/pages/about"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+          <div className="md:hidden shadow-2xl backdrop-blur-md p-5 space-y-4">
+             <hr
+      className="my-5 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
+    />
+            <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               About
-            </Link>
-            <Link
-              href="/components/pages/experience"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="experience"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Experience
-            </Link>
-            <Link
-              href="/components/pages/education"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="education"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Education
-            </Link>
-            <Link
-              href="/components/pages/Skills"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="skills"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
-            </Link>
-            <Link
-              href="/components/pages/Blogs"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="blogs"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Blogs
-            </Link>
-            <Link
-              href="/components/pages/Projects"
-              className="block transition-colors duration-300 font-bold hover:text-pink-600"
+            </ScrollLink>
+            <ScrollLink
+              to="projects"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
-            </Link>
+            </ScrollLink>
           </div>
         )}
       </nav>
