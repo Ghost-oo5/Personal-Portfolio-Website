@@ -2,16 +2,16 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "At last, I did it",
-    short_name: "Ghost",
-    description: "A Progressive Web App built by Ghost",
+    name: "Abdul Basit Portfolio",
+    short_name: "AB Portfolio",
+    description: "A portfolio Progressive Web App built by Abdul Basit",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",
     theme_color: "#000000",
     icons: [
       {
-        src: "/Logo-v1-white.png",
+        src: "/Logo-v1-black.png",
         sizes: "144x144",
         type: "image/png",
       },
