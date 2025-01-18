@@ -3,7 +3,6 @@
 import { personalData } from "../../../../../utils/Data/PersonalData";
 import Image from "next/image";
 
-
 function About() {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
@@ -34,6 +33,6 @@ function About() {
       </div>
     </div>
   );
-};
+}
 
 export default About;

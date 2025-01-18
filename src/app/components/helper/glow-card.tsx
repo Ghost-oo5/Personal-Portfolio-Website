@@ -9,13 +9,14 @@ interface GlowCardProps {
 const GlowCard = ({ children, identifier }: GlowCardProps) => {
   useEffect(() => {
     // Ensure this code runs only in the client-side
-    if (typeof window === "undefined" || typeof document === "undefined") return;
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
 
     const CONTAINER = document.querySelector(
-      `.glow-container-${identifier}`
+      `.glow-container-${identifier}`,
     ) as HTMLElement | null;
     const CARDS = document.querySelectorAll(
-      `.glow-card-${identifier}`
+      `.glow-card-${identifier}`,
     ) as NodeListOf<HTMLElement>;
 
     const CONFIG = {
@@ -67,7 +68,7 @@ const GlowCard = ({ children, identifier }: GlowCardProps) => {
         CONTAINER.style.setProperty("--spread", CONFIG.spread.toString());
         CONTAINER.style.setProperty(
           "--direction",
-          CONFIG.vertical ? "column" : "row"
+          CONFIG.vertical ? "column" : "row",
         );
       }
     };

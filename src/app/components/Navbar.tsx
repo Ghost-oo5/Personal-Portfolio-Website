@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import img from '../../../public/Logo-v1-white.png'
+import img from "../../../public/Logo-v1-white.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +18,14 @@ const Navbar = () => {
               duration={500}
               className="cursor-pointer"
             >
-              <Image src={img} alt="Abdul Basit" id="logo" className="" width={100} height={100}/>
+              <Image
+                src={img}
+                alt="Abdul Basit"
+                id="logo"
+                className=""
+                width={100}
+                height={100}
+              />
             </ScrollLink>
           </div>
 
@@ -110,9 +117,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden shadow-2xl backdrop-blur-md p-5 space-y-4">
-             <hr
-      className="my-5 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50"
-    />
+            <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
             <ScrollLink
               to="about"
               smooth={true}

@@ -29,7 +29,7 @@ const Footer = () => {
             href={"https://github.com/abdulbasitdev"}
             className="Footer-item flex space-x-1 items-center  uppercase"
           >
-            <BiFork /> 
+            <BiFork />
             <p>Fork</p>
           </Link>
         </div>

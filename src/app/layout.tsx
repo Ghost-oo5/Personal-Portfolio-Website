@@ -16,8 +16,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio of abdul basit - Software Developer',
-  description: 'This is the portfolio of abdul basit. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.',
+  title: "Portfolio of abdul basit - Software Developer",
+  description:
+    "This is the portfolio of abdul basit. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
 };
 
 export default function RootLayout({
@@ -34,7 +35,7 @@ export default function RootLayout({
         <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
           {children}
         </main>
-        <ScrollToTopButton/>
+        <ScrollToTopButton />
         <Footer />
       </body>
     </html>

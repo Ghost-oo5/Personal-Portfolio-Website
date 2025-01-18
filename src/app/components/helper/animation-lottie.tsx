@@ -10,7 +10,10 @@ interface AnimationLottieProps {
   width?: string | number; // Optional width prop for customization.
 }
 
-const AnimationLottie = ({ animationPath, width = "95%" }: AnimationLottieProps) => {
+const AnimationLottie = ({
+  animationPath,
+  width = "95%",
+}: AnimationLottieProps) => {
   return (
     <div style={{ width }}>
       <Lottie

@@ -7,18 +7,18 @@ import HeroSection from "./components/pages/hero-section/page";
 import Projects from "./components/pages/Projects/index";
 import Skills from "./components/pages/Skills/page";
 
-import './css/card.css';
+import "./css/card.css";
 export default function Home() {
   return (
     <>
-      <HeroSection/>
-      <About/>
-      <Experience/>
-      <Skills/>
-      <Projects/>
-      <Education/>
-      <Blogs blogs={[]}/>
-      <Contact/>
+      <HeroSection />
+      <About />
+      <Experience />
+      <Skills />
+      <Projects />
+      <Education />
+      <Blogs blogs={[]} />
+      <Contact />
     </>
   );
 }

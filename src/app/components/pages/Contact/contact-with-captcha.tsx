@@ -58,7 +58,7 @@
 
 // //     try {
 // //       const res = await emailjs.send(serviceID, templateID, input, options);
-    
+
 // //       if (res.status === 200) {
 // //         toast.success('Message sent successfully!');
 // //         setInput({
@@ -74,7 +74,6 @@
 // //         toast.error('An unexpected error occurred.');
 // //       }
 // //     }
-    
 
 // //   return (
 // //     <div className="">

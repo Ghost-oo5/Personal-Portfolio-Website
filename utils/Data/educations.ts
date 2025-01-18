@@ -16,5 +16,5 @@ export const educations = [
     title: "Higher Secondary Certificate",
     duration: "2016 - 2018",
     institution: "Govt High  Schoo No.1 Chakwal",
-  }
-]
+  },
+];
