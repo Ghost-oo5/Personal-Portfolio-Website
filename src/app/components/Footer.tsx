@@ -53,7 +53,6 @@ const Footer = () => {
               loop
               autoplay
               className="max-sm:w-32 max-sm:h-32"
-
             />
           </div>
         </div>
