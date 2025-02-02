@@ -1,5 +1,5 @@
 import About from "./components/pages/about/page";
-import Blogs from "./components/pages/Blogs/index";
+// import Blogs from "./components/pages/Blogs/index";
 import Contact from "./components/pages/Contact/index";
 import Education from "./components/pages/education/page";
 import Experience from "./components/pages/experience/page";
@@ -17,7 +17,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <Education />
-      <Blogs blogs={[]} />
+      {/* <Blogs blogs={[]} /> */}
       <Contact />
     </>
   );
