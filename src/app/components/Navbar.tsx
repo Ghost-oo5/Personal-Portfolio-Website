@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
-        <div className="flex justify-between py-5 items-center">
+        <div className="flex justify-between py-3 items-center">
           <div className="logo pl-5 md:ml-5 sm:pl-5">
             <ScrollLink
               to="home"
@@ -23,19 +23,19 @@ const Navbar = () => {
                 alt="Abdul Basit"
                 id="logo"
                 className=""
-                width={100}
-                height={100}
+                width={80}
+                height={80}
               />
             </ScrollLink>
           </div>
 
           {/* Desktop Navbar */}
-          <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-2xl items-center">
+          <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">
             <ScrollLink
               to="about"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               About
             </ScrollLink>
@@ -43,7 +43,7 @@ const Navbar = () => {
               to="experience"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Experience
             </ScrollLink>
@@ -51,7 +51,7 @@ const Navbar = () => {
               to="education"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Education
             </ScrollLink>
@@ -59,7 +59,7 @@ const Navbar = () => {
               to="skills"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Skills
             </ScrollLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
               to="blogs"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Blogs
             </ScrollLink>
@@ -75,7 +75,7 @@ const Navbar = () => {
               to="projects"
               smooth={true}
               duration={500}
-              className="cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Projects
             </ScrollLink>
