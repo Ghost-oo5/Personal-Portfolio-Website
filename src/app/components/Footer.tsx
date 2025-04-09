@@ -8,7 +8,7 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaTwitter
+  FaTwitter,
 } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
 
@@ -27,7 +27,8 @@ const Footer = () => (
             />
           </Link>
           <p className="mt-4 text-gray-400">
-            Full Stack Developer passionate about crafting beautiful and performant web applications.
+            Full Stack Developer passionate about crafting beautiful and
+            performant web applications.
           </p>
         </div>
 
@@ -77,19 +78,34 @@ const Footer = () => (
           </p>
           <div className="mt-4 flex space-x-4">
             <Link href={personalData.github} target="_blank">
-              <FaGithub size={24} className="hover:text-pink-500 transition-colors" />
+              <FaGithub
+                size={24}
+                className="hover:text-pink-500 transition-colors"
+              />
             </Link>
             <Link href={personalData.linkedIn} target="_blank">
-              <FaLinkedin size={24} className="hover:text-pink-500 transition-colors" />
+              <FaLinkedin
+                size={24}
+                className="hover:text-pink-500 transition-colors"
+              />
             </Link>
             <Link href={personalData.twitter} target="_blank">
-              <FaTwitter size={24} className="hover:text-pink-500 transition-colors" />
+              <FaTwitter
+                size={24}
+                className="hover:text-pink-500 transition-colors"
+              />
             </Link>
             <Link href={personalData.Instagram} target="_blank">
-              <FaInstagram size={24} className="hover:text-pink-500 transition-colors" />
+              <FaInstagram
+                size={24}
+                className="hover:text-pink-500 transition-colors"
+              />
             </Link>
             <Link href={personalData.facebook} target="_blank">
-              <FaFacebook size={24} className="hover:text-pink-500 transition-colors" />
+              <FaFacebook
+                size={24}
+                className="hover:text-pink-500 transition-colors"
+              />
             </Link>
           </div>
         </div>
