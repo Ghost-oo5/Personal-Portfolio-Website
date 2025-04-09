@@ -3,7 +3,7 @@ export const projectsData = [
     id: 1,
     name: "Issue Tracker",
     description:
-      "A full‑stack issue tracking web application built with Next.js 13 (App Router) and TypeScript, featuring Google‑OAuth‑secured routes via NextAuth, a Prisma‑managed MySQL database, and React Query for efficient data fetching and caching. The Tailwind CSS– and Radix UI–styled frontend offers dashboards with summary cards and Recharts bar charts, dynamic status filtering, pagination, and full CRUD functionality through secure API routes. Reusable components (forms, tables, badges, modals) and middleware protection ensure a scalable, maintainable codebase.",
+      "Full‑stack issue tracker built with Next.js 13, TypeScript, Prisma/MySQL, NextAuth, Tailwind CSS, Radix UI, and React Query—featuring Google OAuth, CRUD operations, dashboard charts, filtering, and pagination. ",
     tools: [
       "Next.js 13",
       "TypeScript",

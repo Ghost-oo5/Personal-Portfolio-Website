@@ -40,7 +40,7 @@ const ContactWithoutCaptcha = () => {
       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "",
     };
 
-    // Prepare the payload matching your EmailJS template variables.
+
     const templateParams = {
       from_name: input.name, // Sending name as "from_name"
       email: input.email, // If you want to include the email
