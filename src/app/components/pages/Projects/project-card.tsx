@@ -1,5 +1,6 @@
 // @flow strict
 
+import Link from "next/link";
 import * as React from "react";
 
 interface Project {
@@ -7,6 +8,8 @@ interface Project {
   tools: string[];
   role: string;
   description: string;
+  code: string;
+  demo: string;
 }
 interface ProjectCardProps {
   project: Project;
@@ -66,6 +69,24 @@ function ProjectCard({ project }: ProjectCardProps) {
             <span className="text-cyan-400">{" " + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
+          {project.code && (
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className="text-white">Code:</span>
+              <span className="text-cyan-400">
+                <Link href={project.code}>{" " + project.code}</Link>
+              </span>
+              <span className="text-gray-400">,</span>
+            </div>
+          )}
+          {project.demo && (
+            <div className="ml-4 lg:ml-8 mr-2">
+              <span className="text-white">Demo:</span>
+              <span className="text-cyan-400">
+                <Link href={project.demo}>{" " + project.demo}</Link>
+              </span>
+              <span className="text-gray-400">,</span>
+            </div>
+          )}
           <div>
             <span className="text-gray-400">{`};`}</span>
           </div>
