@@ -1,17 +1,16 @@
 // src/app/components/Footer.tsx
 "use client";
-import Link from "next/link";
-import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaStackOverflow,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
 import { personalData } from "@/../utils/Data/PersonalData";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter
+} from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => (
   <footer className="bg-gradient-to-r from-purple-900 to-[#0D1224] text-gray-200">
