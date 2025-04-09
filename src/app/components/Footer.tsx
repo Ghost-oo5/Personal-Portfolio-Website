@@ -16,7 +16,6 @@ const Footer = () => (
   <footer className="bg-gradient-to-r from-purple-900 to-[#0D1224] text-gray-200">
     <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Logo & Blurb */}
         <div>
           <Link href="/">
             <Image

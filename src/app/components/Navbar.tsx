@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import img from "../../../public/Logo-v1-white.png";
 
@@ -47,14 +47,7 @@ const Navbar = () => {
             >
               Experience
             </ScrollLink>
-            <ScrollLink
-              to="education"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Education
-            </ScrollLink>
+
             <ScrollLink
               to="skills"
               smooth={true}
@@ -62,14 +55,6 @@ const Navbar = () => {
               className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
             >
               Skills
-            </ScrollLink>
-            <ScrollLink
-              to="blogs"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Blogs
             </ScrollLink>
             <ScrollLink
               to="projects"
