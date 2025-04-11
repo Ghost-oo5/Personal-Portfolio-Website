@@ -16,6 +16,7 @@ const ContactWithoutCaptcha = () => {
     email: false,
     required: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const checkRequired = () => {
     if (input.email && input.message && input.name) {
@@ -41,12 +42,13 @@ const ContactWithoutCaptcha = () => {
     };
 
     const templateParams = {
-      from_name: `Name: ${input.name}\nEmail: ${input.email}`, // Sending name as "from_name"
-      email: input.email, // If you want to include the email
-      message: input.message, // Message remains the same
+      from_name: input.name,
+      email: input.email,
+      message: `${input.message} \nEmail: ${input.email}`,
     };
 
     try {
+      setIsLoading(true);
       const res = await emailjs.send(
         serviceID,
         templateID,
@@ -56,6 +58,7 @@ const ContactWithoutCaptcha = () => {
 
       if (res.status === 200) {
         toast.success("Message sent successfully!");
+        setIsLoading(false);
         setInput({
           name: "",
           email: "",
@@ -63,6 +66,7 @@ const ContactWithoutCaptcha = () => {
         });
       }
     } catch (error: unknown) {
+      setIsLoading(false);
       if (error instanceof Error) {
         toast.error(error.message);
       } else {
@@ -140,8 +144,18 @@ const ContactWithoutCaptcha = () => {
               role="button"
               onClick={handleSendMail}
             >
-              <span>Send Message</span>
-              <TbMailForward className="mt-1" size={18} />
+              <span>
+                {isLoading ? (
+                  <div
+                    className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                    role="status"
+                  ></div>
+                ) : (
+                  <div className="flex items-center">
+                    send message <TbMailForward className="ml-1" size={18} />
+                  </div>
+                )}
+              </span>
             </button>
           </div>
         </div>
