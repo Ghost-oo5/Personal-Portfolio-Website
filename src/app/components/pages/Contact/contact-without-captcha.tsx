@@ -42,7 +42,7 @@ const ContactWithoutCaptcha = () => {
 
 
     const templateParams = {
-      from_name: input.name, // Sending name as "from_name"
+      from_name: `Name: ${input.name}\nEmail: ${input.email}`, // Sending name as "from_name"
       email: input.email, // If you want to include the email
       message: input.message, // Message remains the same
     };
@@ -71,7 +71,7 @@ const ContactWithoutCaptcha = () => {
       }
     }
   };
-
+console.log(input)
   return (
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
