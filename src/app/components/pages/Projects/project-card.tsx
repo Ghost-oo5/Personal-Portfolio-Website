@@ -73,7 +73,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             <div className="ml-4 lg:ml-8 mr-2">
               <span className="text-white">Code:</span>
               <span className="text-cyan-400">
-                <Link href={project.code}>{" " + project.code}</Link>
+                <Link className="text-blue-600 visited:text-purple-600 underline" target="_blank" href={project.code}>{" " + project.code}</Link>
               </span>
               <span className="text-gray-400">,</span>
             </div>
@@ -82,7 +82,7 @@ function ProjectCard({ project }: ProjectCardProps) {
             <div className="ml-4 lg:ml-8 mr-2">
               <span className="text-white">Demo:</span>
               <span className="text-cyan-400">
-                <Link href={project.demo}>{" " + project.demo}</Link>
+                <Link className="text-blue-600 visited:text-purple-600 underline" target="_blank" href={project.demo}>{" " + project.demo}</Link>
               </span>
               <span className="text-gray-400">,</span>
             </div>
