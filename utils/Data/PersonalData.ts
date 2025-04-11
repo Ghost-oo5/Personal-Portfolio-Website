@@ -3,7 +3,7 @@ export const personalData = {
   profile: "/public/pic2.jpg",
   designation: "Website Developer",
   description:
-    "My name is abdul basit. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.",
+    "I’m Abdul Basit, a dedicated Frontend Developer specializing in TypeScript and crafting responsive, user‑centric interfaces with React and Next.js. I build full‑stack websites using Next.js and Prisma—leveraging Prisma’s type‑safe ORM to integrate robust database layers seamlessly into my applications. Passionate about continuous learning, I stay at the forefront of emerging technologies to deliver scalable, maintainable solutions that exceed expectations.",
   email: "rajaabdulbasit@gmail.com",
   phone: "+923175972977",
   address: "Islamabad",
