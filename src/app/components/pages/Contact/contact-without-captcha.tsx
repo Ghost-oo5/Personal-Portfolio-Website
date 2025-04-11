@@ -1,10 +1,10 @@
 "use client";
 // @flow strict
-import { isValidEmail } from "../../../../../utils/check-email";
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
+import { isValidEmail } from "../../../../../utils/check-email";
 
 const ContactWithoutCaptcha = () => {
   const [input, setInput] = useState({
@@ -40,7 +40,6 @@ const ContactWithoutCaptcha = () => {
       publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? "",
     };
 
-
     const templateParams = {
       from_name: `Name: ${input.name}\nEmail: ${input.email}`, // Sending name as "from_name"
       email: input.email, // If you want to include the email
@@ -52,7 +51,7 @@ const ContactWithoutCaptcha = () => {
         serviceID,
         templateID,
         templateParams,
-        options,
+        options
       );
 
       if (res.status === 200) {
@@ -71,7 +70,6 @@ const ContactWithoutCaptcha = () => {
       }
     }
   };
-console.log(input)
   return (
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
