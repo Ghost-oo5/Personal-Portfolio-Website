@@ -64,6 +64,14 @@ const Navbar = () => {
             >
               Projects
             </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
+            >
+              Contact
+            </ScrollLink>
           </div>
 
           {/* Hamburger Menu Icon */}
