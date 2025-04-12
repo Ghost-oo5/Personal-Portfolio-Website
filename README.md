@@ -89,7 +89,7 @@ NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
 
 ## 📦 Deployment
 
-This site is ready to deploy on [Vercel](https://vercel.com/). Simply push your repo and follow the setup.
+deployed  [here](https://abdul-basit-portfolio-website.vercel.app/)
 
 ---
 
@@ -103,11 +103,6 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 Got a project in mind or just want to say hi?
 
-📧 [abdul@example.com](mailto:abdul@example.com)  
-🌐 [LinkedIn](https://linkedin.com/in/your-profile)  
-🐦 [Twitter/X](https://twitter.com/your-handle)
+📧 [rajaabdulbasit005@gmail.com](mailto:rajaabdulbasit005@gmail.com)  
+
 ```
-
----
-
-Let me know if you’d like the badge style at the top (e.g., Vercel deploy, GitHub stars), or if you want me to auto-fill links like your LinkedIn/Twitter/GitHub. Ready to tweak it further or move on to the complex task?
