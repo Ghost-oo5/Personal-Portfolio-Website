@@ -1,8 +1,4 @@
-Absolutely! Here's a polished, professional `README.md` tailored for your portfolio project, ready to drop into GitHub:
 
----
-
-```markdown
 # 🌐 Abdul Basit — Personal Portfolio
 
 Welcome to my **developer portfolio** built with **Next.js 15**, **Tailwind CSS**, and modern web tools. This site showcases my journey, skills, and projects — all wrapped in a sleek, animated, and responsive UI.
