@@ -103,8 +103,8 @@ export const projectsData = [
     tools: ['React', 'TypeScript', 'Vite', 'Chakra UI', 'react-beautiful-dnd', 'localStorage'],
     role: 'Frontend Developer',
     code: 'https://github.com/Ghost-oo5/Notion-Table-Clone',
-    demo: '',
-    image: 'https://task-table-zeta.vercel.app/', 
+    demo: 'https://task-table-zeta.vercel.app/',
+    image: '', 
   }
   
 ];

@@ -129,7 +129,7 @@ const Navbar = () => {
             >
               Experience
             </ScrollLink>
-            <ScrollLink
+            {/* <ScrollLink
               to="education"
               smooth={true}
               duration={500}
@@ -137,7 +137,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Education
-            </ScrollLink>
+            </ScrollLink> */}
             <ScrollLink
               to="skills"
               smooth={true}
@@ -147,7 +147,7 @@ const Navbar = () => {
             >
               Skills
             </ScrollLink>
-            <ScrollLink
+            {/* <ScrollLink
               to="blogs"
               smooth={true}
               duration={500}
@@ -155,7 +155,7 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Blogs
-            </ScrollLink>
+            </ScrollLink> */}
             <ScrollLink
               to="projects"
               smooth={true}
@@ -164,6 +164,15 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
+            </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
             </ScrollLink>
           </div>
         )}
