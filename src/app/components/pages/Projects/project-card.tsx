@@ -1,5 +1,15 @@
+'use client'
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+import { Code, Globe } from "lucide-react";
 import Link from "next/link";
-import * as React from "react";
+import { useRouter } from "next/navigation";
 
 interface Project {
   id: number;
@@ -16,35 +26,34 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard = ({ project }:ProjectCardProps) => {
+  const route = useRouter();
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      {/* Project Image */}
-      <div className="relative">
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-48 object-cover"
-          />
-        ) : (
-          <div className="w-full h-48 bg-gray-300 flex items-center justify-center">
-            <span className="text-gray-500">{project.name}</span>
-          </div>
-        )}
-      </div>
+    <Card className="border-none bg-[#19223f]  rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={project.name}
+          className="w-full h-48 object-cover rounded-t-md"
+        />
+      ) : (
+        <div className="w-full h-48 bg-muted flex items-center justify-center rounded-t-md">
+          <span className="text-muted-foreground">{project.name}</span>
+        </div>
+      )}
 
-      {/* Project Details */}
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-          {project.name}
-        </h3>
-        <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+      <CardHeader>
+        <Link href={`/projects/${project.id}`}>
+          <CardTitle className="text-xl text-white">{project.name}</CardTitle>
+        </Link>
+      </CardHeader>
+
+      <CardContent>
+        <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
           {project.description}
         </p>
 
-        {/* Tools Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {project.tools.map((tool, index) => (
             <span
               key={index}
@@ -54,32 +63,31 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </span>
           ))}
         </div>
+      </CardContent>
 
-        {/* Links */}
-        <div className="flex space-x-4">
-          {project.demo && (
-            <Link
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-500 hover:text-indigo-600 font-medium"
-            >
-              Demo
-            </Link>
-          )}
-          {project.code && (
-            <Link
-              href={project.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-500 hover:text-indigo-600 font-medium"
-            >
-              Code
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
+      <CardFooter className="flex justify-between pt-4">
+        {project.demo && (
+          <Link
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-500 hover:underline text-sm"
+          >
+            <Button variant='outline'><Globe/> Demo</Button>
+          </Link>
+        )}
+        {project.code && (
+          <Link
+            href={project.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-500 hover:underline text-sm"
+          >
+            <Button variant='outline'><Code/> Code</Button>
+          </Link>
+        )}
+      </CardFooter>
+    </Card>
   );
 };
 

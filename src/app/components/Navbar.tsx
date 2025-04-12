@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import img from "@/../public/logo.png";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,13 +12,7 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
         <div className="flex justify-between py-3 items-center">
-          <div className="logo pl-5 md:ml-5 sm:pl-5">
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer"
-            >
+          <Link href='/' className="logo pl-5 md:ml-5 sm:pl-5">
               <Image
                 src={img}
                 alt="Abdul Basit"
@@ -26,8 +21,7 @@ const Navbar = () => {
                 width={80}
                 height={80}
               />
-            </ScrollLink>
-          </div>
+          </Link>
 
           {/* Desktop Navbar */}
           <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">
