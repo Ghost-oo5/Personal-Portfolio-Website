@@ -1,10 +1,10 @@
 "use client";
-// @flow strict
+
 import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
-import { isValidEmail } from "../../../../../utils/check-email";
+import { isValidEmail } from "@/../utils/check-email";
 
 const ContactWithoutCaptcha = () => {
   const [input, setInput] = useState({

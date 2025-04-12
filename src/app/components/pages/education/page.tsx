@@ -1,11 +1,11 @@
-// @flow strict
+
 import Image from "next/image";
 
-import { educations } from "../../../../../utils/Data/educations";
+import { educations } from "@/../utils/Data/educations";
 import { BsPersonWorkspace } from "react-icons/bs";
-import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
-import lottieFile from "./../../../../../public/public/lottie/education.json";
+import AnimationLottie from "@/app/components/helper/animation-lottie";
+import GlowCard from "@/app/components/helper/glow-card";
+import lottieFile from "@/../public/lottie/education.json";
 
 function Education() {
   return (

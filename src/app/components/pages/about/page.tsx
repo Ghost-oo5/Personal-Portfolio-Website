@@ -1,6 +1,6 @@
-// @flow strict
 
-import { personalData } from "../../../../../utils/Data/PersonalData";
+
+import { personalData } from "@/../utils/Data/PersonalData";
 import Image from "next/image";
 
 function About() {

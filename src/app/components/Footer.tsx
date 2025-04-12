@@ -19,7 +19,7 @@ const Footer = () => (
         <div>
           <Link href="/">
             <Image
-              src="/Logo-v1-white.png"
+              src="/logo.png"
               alt="Abdul Basit Logo"
               width={120}
               height={120}

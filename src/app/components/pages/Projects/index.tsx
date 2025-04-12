@@ -1,4 +1,4 @@
-import { projectsData } from "../../../../../utils/Data/projects-data";
+import { projectsData } from "@/../utils/Data/projects-data";
 import ProjectCard from "./project-card";
 
 const Projects = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { personalData } from "../../../../../utils/Data/PersonalData";
+import { personalData } from "@/../utils/Data/PersonalData";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
@@ -12,7 +12,7 @@ const HeroSection = () => {
     <>
       <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
         <Image
-          src="../public/hero.svg"
+          src="svg/common/hero.svg"
           alt="Hero"
           width={1572}
           height={795}

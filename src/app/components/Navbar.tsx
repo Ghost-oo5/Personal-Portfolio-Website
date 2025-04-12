@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import img from "../../../public/Logo-v1-white.png";
+import img from "@/../public/logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
