@@ -18,6 +18,7 @@ export const projectsData = [
     code: "https://github.com/Ghost-oo5/issue-tracker",
     demo: "",
     images: ["/placeholder/placeholder.png"],
+    videos: [""],
     highlights: [
       "Implemented secure user authentication with Google OAuth.",
       "Designed interactive dashboards with real-time data visualization.",
@@ -45,7 +46,8 @@ export const projectsData = [
     role: "Frontend Developer",
     code: "https://github.com/Ghost-oo5/game-hub",
     demo: "https://gamehub-new.vercel.app/",
-    images: ["/placeholder/placeholder.png"],
+    images: ["/projects/gamehub/gamehub.png"],
+    videos: [""],
     highlights: [
       "Integrated external RAWG API for real-time game data.",
       "Implemented infinite scrolling for enhanced user experience.",
@@ -75,6 +77,7 @@ export const projectsData = [
     code: "https://github.com/Ghost-oo5/Google-flash2.0-exp-image-server",
     demo: "https://automation.alphabase.co/agents/image-generator/generate-image",
     images: ["/placeholder/placeholder.png"],
+    videos: ["/projects/AI-image-generator/AI-image-generator.mp4"],
     highlights: [
       "Developed AI models for image generation using Google's GenAI SDK.",
       "Created intuitive UI for user-friendly interactions.",
@@ -92,9 +95,10 @@ export const projectsData = [
       "A marketplace website developed for JUHUU’s IoT-based platform, showcasing a range of services and products. Built with React.js and styled using Tailwind CSS, the site offers a clean and responsive user interface.",
     tools: ["React.js", "Tailwind CSS", "JavaScript"],
     role: "Frontend Developer",
-    code: "",
-    demo: "https://marketplace.juhuu.app/",
-    images: ["/placeholder/placeholder.png"],
+    code: "https://github.com/Ghost-oo5/marketplace-juhuu-app",
+    demo: "https://marketplace-juhuu-app.vercel.app/",
+    images: ["/projects/juhuu/marketplace-juhuu.png"],
+    videos: [""],
     highlights: [
       "Collaborated with design team to implement brand-consistent UI.",
       "Optimized site for performance and SEO.",
@@ -111,9 +115,10 @@ export const projectsData = [
       "A promotional website for JUHUU’s BikeBox product, offering secure bike storage solutions. Developed using HTML, CSS, and JavaScript, the site delivers essential product information and contact options.",
     tools: ["HTML", "CSS", "JavaScript"],
     role: "Frontend Developer",
-    code: "",
-    demo: "",
-    images: ["/placeholder/placeholder.png"],
+    code: "https://github.com/Ghost-oo5/Juhoo",
+    demo: "https://juhoo.vercel.app/",
+    images: ["/projects/juhuu/juhoo.png"],
+    videos: [""],
     highlights: [
       "Designed engaging animations to showcase product features.",
       "Implemented responsive design for mobile compatibility.",
@@ -139,6 +144,7 @@ export const projectsData = [
     code: "https://github.com/Ghost-oo5/Rentistan--A-Rental-App-in-React-Native-via-Expo",
     demo: "",
     images: ["/placeholder/placeholder.png"],
+    videos: [""],
     highlights: [
       "Implemented real-time chat functionality using Firestore.",
       "Designed intuitive navigation for seamless user experience.",
@@ -164,7 +170,8 @@ export const projectsData = [
     role: "Frontend Developer",
     code: "https://github.com/Ghost-oo5/Notion-Table-Clone",
     demo: "https://task-table-zeta.vercel.app/",
-    images: ["/placeholder/placeholder.png"],
+    images: ["/projects/tasktable/task-table.png"],
+    videos: [""],
     highlights: [
       "Implemented drag-and-drop functionality with react-beautiful-dnd.",
       "Added dark mode support for better user accessibility.",
