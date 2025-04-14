@@ -3,6 +3,7 @@ import { projectsData } from "@/../utils/Data/projects-data";
 import ProjectCard from "./project-card";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Projects = () => {
 const route =   useRouter();
@@ -33,9 +34,9 @@ const route =   useRouter();
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        <div>
-          <Button variant='default' onClick={()=>route.push('/projects')} >See more</Button>
-        </div>
+        <Link href={'/projects'}>
+          <Button variant='default' >See all projects</Button>
+        </Link>
       </div>
     </section>
   );

@@ -1,15 +1,13 @@
-'use client'
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import { Code, Globe } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 interface Project {
   id: number;
@@ -19,27 +17,29 @@ interface Project {
   description: string;
   code: string;
   demo: string;
-  image: string;
+  images: string[];
 }
 
 interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard = ({ project }:ProjectCardProps) => {
-  const route = useRouter();
+const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <Card className="border-none bg-[#19223f]  rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
-      {project.image ? (
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-48 object-cover rounded-t-md"
-        />
-      ) : (
-        <div className="w-full h-48 bg-muted flex items-center justify-center rounded-t-md">
-          <span className="text-muted-foreground">{project.name}</span>
-        </div>
+    <Card className="flex flex-col h-full justify-between border-none bg-[#19223f]  rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+      {project.images.map((item, index) =>
+        item ? (
+          <img
+            src={item}
+            alt={project.name}
+            className="w-full h-48 object-cover rounded-t-md"
+            key={index}
+          />
+        ) : (
+          <div key={index} className="w-full h-48 bg-muted flex items-center justify-center rounded-t-md">
+            <span className="text-muted-foreground">{project.name}</span>
+          </div>
+        )
       )}
 
       <CardHeader>
@@ -66,26 +66,26 @@ const ProjectCard = ({ project }:ProjectCardProps) => {
       </CardContent>
 
       <CardFooter className="flex justify-between pt-4">
-        {project.demo && (
-          <Link
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-500 hover:underline text-sm"
-          >
-            <Button variant='outline'><Globe/> Demo</Button>
+        <Button
+          className="text-indigo-500 hover:underline text-sm"
+          disabled={!project.demo}
+          variant="outline"
+        >
+          <Globe />{" "}
+          <Link href={project.demo} target="_blank" rel="noopener noreferrer">
+            Demo
           </Link>
-        )}
-        {project.code && (
-          <Link
-            href={project.code}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-500 hover:underline text-sm"
-          >
-            <Button variant='outline'><Code/> Code</Button>
+        </Button>
+        <Button
+          variant="outline"
+          className="text-indigo-500 hover:underline text-sm"
+          disabled={!project.code}
+        >
+          <Code />
+          <Link href={project.code} target="_blank" rel="noopener noreferrer">
+            Code
           </Link>
-        )}
+        </Button>
       </CardFooter>
     </Card>
   );
