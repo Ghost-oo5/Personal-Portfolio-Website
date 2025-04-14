@@ -3,7 +3,7 @@ export const projectsData = [
     id: 1,
     name: "Issue Tracker",
     description:
-      "Full‑stack issue tracker built with Next.js 13, TypeScript, Prisma/MySQL, NextAuth, Tailwind CSS, Radix UI, and React Query—featuring Google OAuth, CRUD operations, dashboard charts, filtering, and pagination. ",
+      "A comprehensive full-stack issue tracking application developed with Next.js 13, TypeScript, and Prisma/MySQL. Features include Google OAuth authentication via NextAuth, dynamic dashboards with chart visualizations, advanced filtering, pagination, and complete CRUD operations. Tailwind CSS and Radix UI were utilized for a responsive and accessible UI, while React Query ensured efficient data fetching and state management.",
     tools: [
       "Next.js 13",
       "TypeScript",
@@ -12,17 +12,27 @@ export const projectsData = [
       "Tailwind CSS",
       "NextAuth",
       "React Query",
+      "Radix UI",
     ],
     role: "Full-stack Developer",
     code: "https://github.com/Ghost-oo5/issue-tracker",
     demo: "",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Implemented secure user authentication with Google OAuth.",
+      "Designed interactive dashboards with real-time data visualization.",
+      "Optimized database queries for enhanced performance.",
+    ],
+    challenges: [
+      "Ensuring seamless integration of NextAuth with Prisma.",
+      "Managing complex state across multiple components.",
+    ],
   },
   {
     id: 2,
     name: "GameHub",
     description:
-      "A game discovery platform built with React that fetches and displays popular games with search/filter features.",
+      "A dynamic game discovery platform built with React.js, integrating the RAWG API to fetch and display popular games. Features include search functionality, genre-based filtering, infinite scrolling, and a responsive design achieved with Tailwind CSS and Chakra UI. React Query and Axios were employed for efficient data fetching.",
     tools: [
       "React.js",
       "Tailwind CSS",
@@ -35,55 +45,89 @@ export const projectsData = [
     role: "Frontend Developer",
     code: "https://github.com/Ghost-oo5/game-hub",
     demo: "https://gamehub-new.vercel.app/",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Integrated external RAWG API for real-time game data.",
+      "Implemented infinite scrolling for enhanced user experience.",
+      "Designed responsive UI compatible with various devices.",
+    ],
+    challenges: [
+      "Handling API rate limits and data caching.",
+      "Ensuring smooth infinite scroll performance.",
+    ],
   },
   {
     id: 3,
     name: "AI Image Generator",
     description:
-      "An AI-powered image generation and editing tool with prompt enhancement and feedback loop, featuring a FastAPI backend using the Google GenAI Python SDK and a Next.js frontend UI.",
+      "An AI-powered image generation and editing tool featuring prompt enhancement and a feedback loop. The backend is developed with FastAPI using the Google GenAI Python SDK, while the frontend is built with Next.js and React. Additional tools like Pydantic, Pillow, and n8n were integrated to handle data validation, image processing, and workflow automation.",
     tools: [
       "FastAPI",
       "Python",
-      "google‑genai SDK",
+      "Google GenAI SDK",
       "Pydantic",
       "Pillow",
       "n8n",
       "Next.js",
       "React",
     ],
-    role: "Full‑stack Developer",
+    role: "Full-stack Developer",
     code: "https://github.com/Ghost-oo5/Google-flash2.0-exp-image-server",
     demo: "https://automation.alphabase.co/agents/image-generator/generate-image",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Developed AI models for image generation using Google's GenAI SDK.",
+      "Created intuitive UI for user-friendly interactions.",
+      "Integrated workflow automation with n8n.",
+    ],
+    challenges: [
+      "Ensuring prompt accuracy and relevance.",
+      "Managing asynchronous tasks and real-time feedback.",
+    ],
   },
   {
     id: 4,
     name: "JUHUU Marketplace",
     description:
-      "A marketplace website for JUHUU’s IoT-based platform showcasing services and products.",
+      "A marketplace website developed for JUHUU’s IoT-based platform, showcasing a range of services and products. Built with React.js and styled using Tailwind CSS, the site offers a clean and responsive user interface.",
     tools: ["React.js", "Tailwind CSS", "JavaScript"],
     role: "Frontend Developer",
     code: "",
     demo: "https://marketplace.juhuu.app/",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Collaborated with design team to implement brand-consistent UI.",
+      "Optimized site for performance and SEO.",
+    ],
+    challenges: [
+      "Integrating various third-party services and APIs.",
+      "Ensuring cross-browser compatibility.",
+    ],
   },
   {
     id: 5,
     name: "JUHUU BikeBox Website",
     description:
-      "Website for JUHUU’s BikeBox product, providing secure bike storage solutions.",
+      "A promotional website for JUHUU’s BikeBox product, offering secure bike storage solutions. Developed using HTML, CSS, and JavaScript, the site delivers essential product information and contact options.",
     tools: ["HTML", "CSS", "JavaScript"],
     role: "Frontend Developer",
     code: "",
     demo: "",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Designed engaging animations to showcase product features.",
+      "Implemented responsive design for mobile compatibility.",
+    ],
+    challenges: [
+      "Creating an engaging design with limited content.",
+      "Ensuring fast load times with rich media content.",
+    ],
   },
   {
     id: 6,
     name: "Rentistan",
     description:
-      "A React Native rental management app enabling tenants and property managers to communicate and manage listings with Firebase backend.",
+      "A React Native rental management app designed to facilitate communication between tenants and property managers. Features include property listings, messaging, and user authentication, all backed by Firebase services. Expo and React Navigation were utilized for streamlined development and navigation.",
     tools: [
       "React Native",
       "Expo",
@@ -94,31 +138,40 @@ export const projectsData = [
     role: "Full-stack Mobile Developer",
     code: "https://github.com/Ghost-oo5/Rentistan--A-Rental-App-in-React-Native-via-Expo",
     demo: "",
-    image: "",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Implemented real-time chat functionality using Firestore.",
+      "Designed intuitive navigation for seamless user experience.",
+    ],
+    challenges: [
+      "Managing real-time data synchronization.",
+      "Ensuring app performance across various devices.",
+    ],
   },
   {
     id: 7,
-    name: 'Notion Table Clone',
-    description: "A Notion-style editable task table built with drag-and-drop columns/rows, tag input, persistent localStorage, and dark mode.",
-    tools: ['React', 'TypeScript', 'Vite', 'Chakra UI', 'react-beautiful-dnd', 'localStorage'],
-    role: 'Frontend Developer',
-    code: 'https://github.com/Ghost-oo5/Notion-Table-Clone',
-    demo: 'https://task-table-zeta.vercel.app/',
-    image: '', 
-  }
-  
+    name: "Notion Table Clone",
+    description:
+      "A Notion-style editable task table featuring drag-and-drop functionality for columns and rows, tag inputs, persistent localStorage, and dark mode support. Built with React, TypeScript, and Vite, and styled using Chakra UI.",
+    tools: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Chakra UI",
+      "react-beautiful-dnd",
+      "localStorage",
+    ],
+    role: "Frontend Developer",
+    code: "https://github.com/Ghost-oo5/Notion-Table-Clone",
+    demo: "https://task-table-zeta.vercel.app/",
+    images: ["/placeholder/placeholder.png"],
+    highlights: [
+      "Implemented drag-and-drop functionality with react-beautiful-dnd.",
+      "Added dark mode support for better user accessibility.",
+    ],
+    challenges: [
+      "Maintaining state consistency during drag-and-drop operations.",
+      "Ensuring data persistence with localStorage.",
+    ],
+  },
 ];
-
-// Do not remove any property.
-// Leave it blank instead as shown below
-
-// {
-//     id: 1,
-//     name: '',
-//     description: "",
-//     tools: [],
-//     role: '',
-//     code: '',
-//     demo: '',
-//     image: crefin,
-// },

@@ -1,11 +1,11 @@
-// @flow strict
+
 import Link from "next/link";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { FaFacebook, FaStackOverflow } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
-import { personalData } from "../../../../../utils/Data/PersonalData";
+import { personalData } from "@/../utils/Data/PersonalData";
 import ContactWithoutCaptcha from "./contact-without-captcha";
 
 function ContactSection() {
