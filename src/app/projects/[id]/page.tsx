@@ -14,11 +14,12 @@ import Heading from "@/components/ui/Heading";
 import { Code, Globe, User } from "lucide-react";
 import Image from "next/image";
 
-interface Props {
-  params: { id: string };
-}
+type Props = {
+  params: Promise<{ id: string }>;
+};
 
-const page = ({ params: { id } }: Props) => {
+const page = async ({ params }: Props) => {
+  const { id } = await params;
   const project = projectsData.find((projects) => projects.id == parseInt(id));
   return (
     <div className="w-full pt-14">
@@ -51,8 +52,10 @@ const page = ({ params: { id } }: Props) => {
         <div className="flex flex-col gap-2">
           <Heading>Technologies used:</Heading>
           <div className="flex gap-2">
-            {project?.tools.map((item) => (
-              <Badge className="text-md">{item}</Badge>
+            {project?.tools.map((item, index) => (
+              <Badge key={index} className="text-md">
+                {item}
+              </Badge>
             ))}
           </div>
         </div>

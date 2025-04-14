@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Code, Globe } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface Project {
@@ -29,8 +30,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Card className="flex flex-col h-full justify-between border-none bg-[#19223f]  rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       {project.images.map((item, index) =>
         item ? (
-          <img
+          <Image
             src={item}
+            width={400}
+            height={192}
             alt={project.name}
             className="w-full h-48 object-cover rounded-t-md"
             key={index}

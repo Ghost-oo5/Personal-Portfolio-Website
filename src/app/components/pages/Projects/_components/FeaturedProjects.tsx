@@ -1,17 +1,13 @@
 'use client'
 import { projectsData } from "@/../utils/Data/projects-data";
-import ProjectCard from "../project-card";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
+import ProjectCard from "../project-card";
 
 const FeaturedProjects = () => {
   return (

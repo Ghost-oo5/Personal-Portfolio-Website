@@ -2,11 +2,9 @@
 import { projectsData } from "@/../utils/Data/projects-data";
 import ProjectCard from "./project-card";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const Projects = () => {
-const route =   useRouter();
   const displayedProjects = projectsData.slice(0, 3);
   return (
     <section id="projects">
