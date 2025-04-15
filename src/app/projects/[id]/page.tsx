@@ -61,9 +61,9 @@ const page = async ({ params }: Props) => {
         </div>
         <div className="flex flex-col gap-2">
           <Heading>Technologies used:</Heading>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             {project?.tools.map((item, index) => (
-              <Badge key={index} className="text-md">
+              <Badge key={index} className="max-sm:text-md  text-nowrap">
                 {item}
               </Badge>
             ))}
@@ -75,7 +75,7 @@ const page = async ({ params }: Props) => {
         </div>
         <div className="flex flex-col gap-2">
           <Heading>Images</Heading>
-          <Carousel className="w-full ">
+          <Carousel className="w-full">
             <CarouselContent>
               {project?.videos.map((item, index) =>
                 item ? (
@@ -86,7 +86,7 @@ const page = async ({ params }: Props) => {
                       <CarouselItem key={index}>
                         <div className="p-1">
                           <Card>
-                            <CardContent className="relative w-full h-[35rem] rounded-lg overflow-hidden">
+                            <CardContent className="relative w-full aspect-video rounded-lg overflow-hidden">
                               <Image
                                 src={item}
                                 alt={project.name || "image"}
@@ -102,8 +102,8 @@ const page = async ({ params }: Props) => {
                 )
               )}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="text-black hidden md:flex" />
+            <CarouselNext className="text-black hidden md:flex" />
           </Carousel>
         </div>
         <hr className="my-10 border-gray-700" />
