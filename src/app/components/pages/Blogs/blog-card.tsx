@@ -32,7 +32,7 @@ function BlogCard({ blog }: BlogProps) {
         />
       </div>
       <div className="p-2 sm:p-3 flex flex-col">
-        <div className="flex justify-between items-center text-[#16f2b3] text-sm">
+        <div className="flex justify-between items-center text-[#16f2b3] text-base">
           <p>{timeConverter(blog.published_at)}</p>
           <div className="flex items-center gap-3">
             <p className="flex items-center gap-1">
@@ -52,10 +52,10 @@ function BlogCard({ blog }: BlogProps) {
             {blog.title}
           </p>
         </Link>
-        <p className="mb-2 text-sm text-[#16f2b3]">
+        <p className="mb-2 text-base text-[#16f2b3]">
           {`${blog.reading_time_minutes} Min Read`}
         </p>
-        <p className="text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3">
+        <p className="text-base lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3">
           {blog.description}
         </p>
         {/* <div className="">

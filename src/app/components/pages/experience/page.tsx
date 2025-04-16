@@ -20,7 +20,7 @@ function Experience() {
         className="absolute top-0 -z-10"
       />
 
-      <div className="flex justify-center my-5 lg:py-8">
+      <div className="flex justify-center  md:my-5 lg:py-8">
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
@@ -54,7 +54,7 @@ function Experience() {
                       className="absolute bottom-0 opacity-80"
                     />
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#16f2b3]">
+                      <p className="text-xs sm:text-base text-[#16f2b3]">
                         {experience.duration}
                       </p>
                     </div>
@@ -66,7 +66,7 @@ function Experience() {
                         <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                           {experience.title}
                         </p>
-                        <p className="text-sm sm:text-base">
+                        <p className="text-base sm:text-base lg:text-lg">
                           {experience.company}
                         </p>
                       </div>

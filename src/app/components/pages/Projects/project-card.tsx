@@ -59,20 +59,20 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
           )
         )}
-        <CardHeader>
+        <CardHeader  className=" max-sm:pl-6 max-sm:pb-3">
           <Link href={`/projects/${project.id}`}>
             <CardTitle className="text-xl text-white">{project.name}</CardTitle>
           </Link>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+          <p className="max-sm:text-base lg:text-lg text-muted-foreground line-clamp-3 mb-4">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tools.map((tool, index) => (
               <span
                 key={index}
-                className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded dark:bg-blue-200 dark:text-blue-800"
+                className="bg-blue-100 text-blue-800 max-sm:text-sm text-base font-medium px-2 py-1 rounded dark:bg-blue-200 dark:text-blue-800"
               >
                 {tool}
               </span>
@@ -83,7 +83,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <CardFooter className="flex justify-between pt-4">
         <Button
-          className="text-indigo-500 hover:underline text-sm"
+          className="text-indigo-500 hover:underline text-base max-sm:text-sm"
           disabled={!project.demo}
           variant="outline"
         >
@@ -94,7 +94,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </Button>
         <Button
           variant="outline"
-          className="text-indigo-500 hover:underline text-sm"
+          className="text-indigo-500 hover:underline text-base max-sm:text-sm"
           disabled={!project.code}
         >
           <Code />
