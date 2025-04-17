@@ -1,5 +1,5 @@
 import { projectsData } from "@/../utils/Data/projects-data";
-import FeaturedProjects from "@/app/components/pages/Projects/_components/FeaturedProjects";
+import FeaturedProjects from "@/app/components/projects/_components/FeaturedProjects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
