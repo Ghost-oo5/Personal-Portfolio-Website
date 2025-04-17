@@ -111,7 +111,7 @@ const Footer = () => (
       </div>
 
       {/* Divider & Copyright */}
-      <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+      <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-base">
         &copy; {new Date().getFullYear()} Abdul Basit. All rights reserved.
       </div>
     </div>

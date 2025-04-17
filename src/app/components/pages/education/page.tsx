@@ -60,7 +60,7 @@ function Education() {
                       className="absolute bottom-0 opacity-80"
                     />
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#16f2b3]">
+                      <p className="text-xs sm:text-base text-[#16f2b3]">
                         {education.duration}
                       </p>
                     </div>
@@ -72,7 +72,7 @@ function Education() {
                         <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                           {education.title}
                         </p>
-                        <p className="text-sm sm:text-base">
+                        <p className="text-base sm:text-base">
                           {education.institution}
                         </p>
                       </div>
