@@ -4,174 +4,102 @@ import { useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import img from "@/../public/logo.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+// Define your navigation items
+const navItems = [
+  { label: "About", to: "about" },
+  { label: "Experience", to: "experience" },
+  { label: "Skills", to: "skills" },
+  { label: "Projects", to: "projects" },
+  { label: "Contact", to: "contact" },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const renderLink = (
+    item: { label: string; to: string },
+    isMobile = false
+  ) => {
+    const commonClasses = isMobile
+      ? "block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
+      : "cursor-pointer transition-colors duration-300 hover:text-pink-600 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center";
+
+    if (pathname === "/") {
+      return (
+        <ScrollLink
+          key={item.to}
+          to={item.to}
+          smooth={true}
+          duration={500}
+          className={commonClasses}
+          onClick={isMobile ? () => setIsMenuOpen(false) : undefined}
+        >
+          {item.label}
+        </ScrollLink>
+      );
+    }
+    return (
+      <Link
+        key={item.to}
+        href={`/#${item.to}`}
+        className={commonClasses}
+        onClick={() => isMobile && setIsMenuOpen(false)}
+      >
+        {item.label}
+      </Link>
+    );
+  };
 
   return (
-    <>
-      <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
-        <div className="flex justify-between py-3 items-center">
-          <Link href='/' className="logo pl-5 md:ml-5 sm:pl-5">
-              <Image
-                src={img}
-                alt="Abdul Basit"
-                id="logo"
-                className=""
-                width={80}
-                height={80}
-              />
-          </Link>
-
-          {/* Desktop Navbar */}
-          <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">
-            <ScrollLink
-              to="about"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              About
-            </ScrollLink>
-            <ScrollLink
-              to="experience"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Experience
-            </ScrollLink>
-
-            <ScrollLink
-              to="skills"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Skills
-            </ScrollLink>
-            <ScrollLink
-              to="projects"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Projects
-            </ScrollLink>
-            <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer transition-colors duration-300 hover:text-pink-600  relative  w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-pink-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center"
-            >
-              Contact
-            </ScrollLink>
-          </div>
-
-          {/* Hamburger Menu Icon */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+    <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
+      <div className="flex justify-between py-3 items-center">
+        <Link href="/" className="logo pl-5 md:ml-5 sm:pl-5">
+          <Image src={img} alt="Abdul Basit" id="logo" width={80} height={80} />
+        </Link>
+        <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">
+          {navItems.map((item) => renderLink(item))}
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden shadow-2xl backdrop-blur-md p-5 space-y-4">
-            <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
-            <ScrollLink
-              to="about"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              About
-            </ScrollLink>
-            <ScrollLink
-              to="experience"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Experience
-            </ScrollLink>
-            {/* <ScrollLink
-              to="education"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Education
-            </ScrollLink> */}
-            <ScrollLink
-              to="skills"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Skills
-            </ScrollLink>
-            {/* <ScrollLink
-              to="blogs"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Blogs
-            </ScrollLink> */}
-            <ScrollLink
-              to="projects"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </ScrollLink>
-            <ScrollLink
-              to="contact"
-              smooth={true}
-              duration={500}
-              className="block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </ScrollLink>
-          </div>
-        )}
-      </nav>
-    </>
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+      {isMenuOpen && (
+        <div className="md:hidden shadow-2xl backdrop-blur-md p-5 space-y-4">
+          <hr className="my-5 h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
+          {navItems.map((item) => renderLink(item, true))}
+        </div>
+      )}
+    </nav>
   );
 };
 
