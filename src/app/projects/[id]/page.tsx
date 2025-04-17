@@ -31,7 +31,7 @@ const page = async ({ params }: Props) => {
         }}
       >
         <div className="rounded-lg absolute inset-0  bg-gradient-to-r from-[#EC4899] via-indigo-500 to-[#0D1224] opacity-85"></div>
-        <div className="relative z-10 flex flex-col items-start justify-between max-sm:gap-5 md:gap-8 p-8 md:p-12 lg:p-16">
+        <div className="relative z-10 flex flex-col items-start justify-between max-sm:gap-5 md:gap-8 py-8 pl-5 md:p-12 lg:p-16">
           <h1 className="text-2xl font-bold md:text-4xl lg:text-5xl">
             {project?.name}
           </h1>

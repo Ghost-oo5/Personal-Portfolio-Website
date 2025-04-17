@@ -1,8 +1,9 @@
 'use client'
 import { projectsData } from "@/../utils/Data/projects-data";
-import ProjectCard from "./project-card";
 import { Button } from "@/components/ui/button";
+import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
+import ProjectCard from "./project-card";
 
 const Projects = () => {
   const displayedProjects = projectsData.slice(0, 3);
@@ -17,7 +18,7 @@ const Projects = () => {
           <span className="w-full h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
-      <div className="flex flex-col gap-10 items-center container md:mt-16 mx-auto py-20 px-4 sm:px-8   from-purple-800 to-purple-900">
+      <div className="flex flex-col gap-10 items-center container max-sm:mt-10 md:mt-16 mx-auto py-20 px-4 sm:px-8   from-purple-800 to-purple-900">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-bold text-white dark:text-gray-100">
             Projects Showcase
@@ -33,7 +34,7 @@ const Projects = () => {
           ))}
         </div>
         <Link href={'/projects'}>
-          <Button variant='outline'  className="text-white bg-[#1A1443]" >See all projects</Button>
+          <Button variant='outline'  className="text-white bg-[#1A1443]" >See all projects <MoveUpRight/> </Button>
         </Link>
       </div>
     </section>
