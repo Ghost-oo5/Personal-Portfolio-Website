@@ -1,8 +1,5 @@
-import React, { ReactNode } from 'react'
-
-interface Props{
-    children: ReactNode
-}
+import { Props } from '@/Types/types'
+import React from 'react'
 
 const Heading = ({children}:Props) => {
   return (

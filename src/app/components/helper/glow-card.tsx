@@ -1,10 +1,6 @@
 "use client";
-import { ReactNode, useEffect } from "react";
-
-interface GlowCardProps {
-  children: ReactNode;
-  identifier: string;
-}
+import { useEffect } from "react";
+import { GlowCardProps } from "@/Types/types";
 
 const GlowCard = ({ children, identifier }: GlowCardProps) => {
   useEffect(() => {
