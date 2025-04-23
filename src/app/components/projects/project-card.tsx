@@ -9,22 +9,7 @@ import {
 import { Code, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Project {
-  id: number;
-  name: string;
-  tools: string[];
-  role: string;
-  description: string;
-  code: string;
-  demo: string;
-  images: string[];
-  videos?: string[];
-}
-
-interface ProjectCardProps {
-  project: Project;
-}
+import { ProjectCardProps } from "@/Types/types";
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
