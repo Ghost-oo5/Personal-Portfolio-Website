@@ -6,7 +6,7 @@ Welcome to my **developer portfolio** built with **Next.js 15**, **Tailwind CSS*
 ---
 ## 📸 Screenshot
 
-![Homepage of Abdul Basit’s Portfolio](/Website-overview.png)
+![Homepage of Abdul Basit’s Portfolio](/Website-overview.png
 ---
 ## 🚀 Live Demo
 
