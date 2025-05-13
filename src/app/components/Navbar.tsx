@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import img from "@/../public/logo.png";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 // Define your navigation items
 const navItems = [
@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const renderLink = (
     item: { label: string; to: string },
-    isMobile = false
+    isMobile = false,
   ) => {
     const commonClasses = isMobile
       ? "block cursor-pointer transition-colors duration-300 font-bold hover:text-pink-600"
@@ -54,9 +54,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-[9999] backdrop-blur-md text-white px-5 sm:px-10 shadow-md w-full rounded-lg">
-      <div className="flex justify-between py-3 items-center">
-        <Link href="/" className="logo pl-5 md:ml-5 sm:pl-5">
+    <nav className="sticky top-0 z-[9999] backdrop-blur-md  text-white  shadow-md  rounded-lg">
+      <div className="flex justify-between py-3 items-center container">
+        <Link href="/" className="logo ">
           <Image src={img} alt="Abdul Basit" id="logo" width={80} height={80} />
         </Link>
         <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">

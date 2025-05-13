@@ -10,13 +10,15 @@ import "./css/card.css";
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      {/* <Education /> */}
-      <Contact />
+      <div className="container">
+        <HeroSection />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        {/* <Education /> */}
+        <Contact />
+      </div>
     </>
   );
 }
