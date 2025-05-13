@@ -3,12 +3,12 @@ export const projectsData = [
     id: 1,
     name: "Issue Tracker",
     description:
-      "A comprehensive full-stack issue tracking application developed with Next.js 13, TypeScript, and Prisma/MySQL. Features include Google OAuth authentication via NextAuth, dynamic dashboards with chart visualizations, advanced filtering, pagination, and complete CRUD operations. Tailwind CSS and Radix UI were utilized for a responsive and accessible UI, while React Query ensured efficient data fetching and state management.",
+      "A comprehensive full-stack issue tracking application developed with Next.js 15, TypeScript, and Prisma/MySQL. Features include Google OAuth authentication via NextAuth, dynamic dashboards with chart visualizations, advanced filtering, pagination, and complete CRUD operations. Tailwind CSS and Radix UI were utilized for a responsive and accessible UI, while React Query ensured efficient data fetching and state management.",
     tools: [
-      "Next.js 13",
+      "Next.js 15",
       "TypeScript",
       "Prisma",
-      "MySQL",
+      "Supabase",
       "Tailwind CSS",
       "NextAuth",
       "React Query",
@@ -16,8 +16,12 @@ export const projectsData = [
     ],
     role: "Full-stack Developer",
     code: "https://github.com/Ghost-oo5/issue-tracker",
-    demo: "",
-    images: ["/placeholder/placeholder.png"],
+    demo: "https://issuetracker005.vercel.app/",
+    images: [
+      "/projects/issue-tracker/issue-tracker.png",
+      "/projects/issue-tracker/dashboard.png",
+      "/projects/issue-tracker/issues.png",
+    ],
     videos: [""],
     highlights: [
       "Implemented secure user authentication with Google OAuth.",
