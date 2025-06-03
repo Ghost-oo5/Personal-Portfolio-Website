@@ -66,7 +66,7 @@ export const projectsData = [
     id: 3,
     name: "AI Image Generator",
     description:
-      "An AI-powered image generation and editing tool featuring prompt enhancement and a feedback loop. The backend is developed with FastAPI using the Google GenAI Python SDK, while the frontend is built with Next.js and React. Additional tools like Pydantic, Pillow, and n8n were integrated to handle data validation, image processing, and workflow automation.",
+      "An AI-powered image generation and editing tool featuring prompt enhancement and a feedback loop. The backend is developed with FastAPI using the Google GenAI Python SDK, while the Full-Stack is built with Next.js and React. Additional tools like Pydantic, Pillow, and n8n were integrated to handle data validation, image processing, and workflow automation.",
     tools: [
       "FastAPI",
       "Python",
@@ -98,7 +98,7 @@ export const projectsData = [
     description:
       "A marketplace website developed for JUHUU’s IoT-based platform, showcasing a range of services and products. Built with React.js and styled using Tailwind CSS, the site offers a clean and responsive user interface.",
     tools: ["React.js", "Tailwind CSS", "JavaScript"],
-    role: "Frontend Developer",
+    role: "Full-Stack Developer",
     code: "https://github.com/Ghost-oo5/marketplace-juhuu-app",
     demo: "https://marketplace-juhuu-app.vercel.app/",
     images: ["/projects/juhuu/marketplace-juhuu.png"],

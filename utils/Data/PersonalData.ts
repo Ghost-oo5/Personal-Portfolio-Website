@@ -3,7 +3,7 @@ export const personalData = {
   profile: "/pic3.jpg",
   designation: "Full-Stack Web Developer",
   description:
-    "I’m Abdul Basit, a dedicated Frontend Developer specializing in TypeScript and crafting responsive, user‑centric interfaces with React and Next.js. I build full‑stack websites using Next.js and Prisma—leveraging Prisma’s type‑safe ORM to integrate robust database layers seamlessly into my applications. Passionate about continuous learning, I stay at the forefront of emerging technologies to deliver scalable, maintainable solutions that exceed expectations.",
+    "I’m Abdul Basit, a dedicated Full-Stack Developer specializing in TypeScript and crafting responsive, user‑centric interfaces with React and Next.js. I build full‑stack websites using Next.js and Prisma—leveraging Prisma’s type‑safe ORM to integrate robust database layers seamlessly into my applications. Passionate about continuous learning, I stay at the forefront of emerging technologies to deliver scalable, maintainable solutions that exceed expectations.",
   email: "rajaabdulbasit@gmail.com",
   phone: "+923175972977",
   address: "Islamabad",
