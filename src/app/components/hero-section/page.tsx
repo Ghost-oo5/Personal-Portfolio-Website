@@ -14,7 +14,7 @@ import { SplitText } from "gsap/dist/SplitText";
 const HeroSection = () => {
   gsap.registerPlugin(SplitText);
   useGSAP(() => {
-    let split = SplitText.create("#designation", {
+    const split = SplitText.create("#designation", {
       type: "words, chars, lines",
     });
     gsap.from(split.chars, {
