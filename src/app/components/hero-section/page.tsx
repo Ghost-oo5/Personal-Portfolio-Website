@@ -1,13 +1,50 @@
-import React from "react";
-import Image from "next/image";
+"use client";
 import { personalData } from "@/../utils/Data/PersonalData";
+import { useGSAP } from "@gsap/react";
+import {} from "@gsap/react";
+import gsap from "gsap";
+import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
+import { SiLeetcode } from "react-icons/si";
+import { SplitText } from "gsap/dist/SplitText";
 const HeroSection = () => {
+  gsap.registerPlugin(SplitText);
+  useGSAP(() => {
+    let split = SplitText.create("#designation", {
+      type: "words, chars, lines",
+    });
+    gsap.from(split.chars, {
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.15,
+      ease: "power1.in",
+    });
+    gsap.to("designation", {
+      y: 0,
+      opacity: 1,
+      ease: "bounce.inOut",
+      // repeat:-1,
+      // yoyo:true
+    });
+    gsap.fromTo(
+      ".para",
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 1,
+        delay: 1,
+        stagger: 0.3,
+      },
+    );
+  }, []);
+
   return (
     <>
       <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
@@ -20,48 +57,51 @@ const HeroSection = () => {
         />
         <div className="grid grid-cols-1 max-sm:pt-8 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
           <div className="order-1 lg:order-1 flex flex-col items-start justify-center p-2 pb-5 md:pb-10 lg:pt-10">
-            <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+            <h1 className="para text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
               Hello,
               <br />
-              This is <span className="text-pink-500">{personalData.name}</span>
+              This is{" "}
+              <span className=" text-pink-500">{personalData.name}</span>
               {","}
               <br />
               I'm a Professional{" "}
-              <span className="text-[#16f2b3]">{personalData.designation}</span>
+              <span className=" text-[#16f2b3] designation " id="designation">
+                {personalData.designation}
+              </span>
             </h1>
             <div className=" max-md:my-6 md:my-12 flex items-center gap-5">
               <Link
                 href={personalData.github}
                 target="_blank"
-                className="transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <BsGithub size={30} />
               </Link>
               <Link
                 href={personalData.linkedIn}
                 target="_blank"
-                className="transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <BsLinkedin size={30} />
               </Link>
               <Link
                 href={personalData.facebook}
                 target="_blank"
-                className="transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <FaFacebook size={30} />
               </Link>
               <Link
                 href={personalData.leetcode}
                 target="_blank"
-                className="transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <SiLeetcode size={30} />
               </Link>
               <Link
                 href={personalData.twitter}
                 target="_blank"
-                className="transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <FaTwitterSquare size={30} />
               </Link>
