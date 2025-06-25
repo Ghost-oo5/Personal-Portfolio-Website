@@ -1,25 +1,23 @@
 "use client";
 import { personalData } from "@/../utils/Data/PersonalData";
-import { useGSAP } from "@gsap/react";
-import {} from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/dist/SplitText";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
-import { SplitText } from "gsap/dist/SplitText";
-import { useRef, useEffect } from "react";
 const HeroSection = () => {
   const designationRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(SplitText);
-    const titles = personalData.designation;
+    const titles = personalData.designationAlternateWords;
     let index = 0;
-    let split: any;
+    let split: SplitText | null;
 
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
 
@@ -41,12 +39,12 @@ const HeroSection = () => {
       // Pause, then erase
       tl.to(split.chars, {
         opacity: 0,
-        duration: 0.03,
-        stagger: { each: 0.03, from: "end" },
+        duration: 0.08,
+        stagger: { each: 0.08, from: "end" },
         ease: "none",
         delay: 1,
         onComplete: () => {
-          split.revert();
+          split?.revert();
           index = (index + 1) % titles.length;
           runAnimation();
         },
@@ -82,11 +80,20 @@ const HeroSection = () => {
               <br />
               I'm a Professional <br />
               <span
-                className=" text-[#16f2b3] designation inline-block"
-                ref={designationRef}
+                className=" text-[#16f2b3] mr-3  designation inline-block"
                 id="designation"
               >
-                {personalData.designation}
+                {personalData.designation}{" "}
+              </span>
+              <span
+                className=" text-[#16f2b3] designationAlternate inline-block"
+                ref={designationRef}
+                id="designationAlternate"
+              >
+                {personalData.designationAlternateWords}
+              </span>
+              <span id="cursor" className="inline-block opacity-0">
+                |
               </span>
             </h1>
             <div className=" max-md:my-6 md:my-12 flex items-center gap-5">
@@ -148,7 +155,7 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-          <div className="order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
+          <div className="data-frame order-1 lg:order-2 from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
             <div className="flex flex-row">
               <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
               <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
