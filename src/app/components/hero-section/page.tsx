@@ -11,38 +11,54 @@ import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
 import { SplitText } from "gsap/dist/SplitText";
+import { useRef, useEffect } from "react";
 const HeroSection = () => {
-  gsap.registerPlugin(SplitText);
-  useGSAP(() => {
-    const split = SplitText.create("#designation", {
-      type: "words, chars, lines",
-    });
-    gsap.from(split.chars, {
-      y: 100,
-      autoAlpha: 0,
-      stagger: 0.15,
-      ease: "power1.in",
-    });
-    gsap.to("designation", {
-      y: 0,
-      opacity: 1,
-      ease: "bounce.inOut",
-      // repeat:-1,
-      // yoyo:true
-    });
-    gsap.fromTo(
-      ".para",
-      {
+  const designationRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(SplitText);
+    const titles = personalData.designation;
+    let index = 0;
+    let split: any;
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0.5 });
+
+    const runAnimation = () => {
+      const el = designationRef.current;
+      if (!el) return;
+
+      el.textContent = titles[index];
+      split = SplitText.create(el, { type: "chars" });
+
+      // Type in
+      tl.from(split.chars, {
         opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 1,
+        duration: 0.03,
+        stagger: 0.03,
+        ease: "none",
+      });
+
+      // Pause, then erase
+      tl.to(split.chars, {
+        opacity: 0,
+        duration: 0.03,
+        stagger: { each: 0.03, from: "end" },
+        ease: "none",
         delay: 1,
-        stagger: 0.3,
-      },
-    );
+        onComplete: () => {
+          split.revert();
+          index = (index + 1) % titles.length;
+          runAnimation();
+        },
+      });
+    };
+
+    runAnimation();
+
+    return () => {
+      tl.kill();
+      split?.revert();
+    };
   }, []);
 
   return (
@@ -64,8 +80,12 @@ const HeroSection = () => {
               <span className=" text-pink-500">{personalData.name}</span>
               {","}
               <br />
-              I'm a Professional{" "}
-              <span className=" text-[#16f2b3] designation " id="designation">
+              I'm a Professional <br />
+              <span
+                className=" text-[#16f2b3] designation inline-block"
+                ref={designationRef}
+                id="designation"
+              >
                 {personalData.designation}
               </span>
             </h1>
