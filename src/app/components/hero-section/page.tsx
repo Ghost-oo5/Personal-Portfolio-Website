@@ -64,18 +64,33 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
-    gsap.fromTo(
+    const tl = gsap.timeline();
+
+    // 1. Fade-in .para
+    tl.fromTo(
       ".para",
-      { opacity: 0, y: 20 },
-      {
-        autoAlpha: 1,
-        opacity: 1,
-        y: 0,
-        delay: 1,
-        stagger: 0.3,
-        ease: "power1.in",
-      },
+      { autoAlpha: 0, y: 20 },
+      { autoAlpha: 1, y: 0, stagger: 0.3, duration: 0.6, ease: "power1.in" },
     );
+
+    tl.to({}, { duration: 1.5 });
+
+    tl.to(
+      ".social-icons",
+      {
+        y: 3,
+        repeat: -1,
+        yoyo: true,
+        duration: 0.8,
+        stagger: 0.5,
+        ease: "circ",
+      },
+      "<",
+    );
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   useEffect(() => {
@@ -135,39 +150,39 @@ const HeroSection = () => {
                 |
               </span>
             </h1>
-            <div className=" max-md:my-6 md:my-12 flex items-center gap-5">
+            <div className="social max-md:my-6 md:my-12 flex items-center gap-5">
               <Link
                 href={personalData.github}
                 target="_blank"
-                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para social-icons opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <BsGithub size={30} />
               </Link>
               <Link
                 href={personalData.linkedIn}
                 target="_blank"
-                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para social-icons opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <BsLinkedin size={30} />
               </Link>
               <Link
                 href={personalData.facebook}
                 target="_blank"
-                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para social-icons opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <FaFacebook size={30} />
               </Link>
               <Link
                 href={personalData.leetcode}
                 target="_blank"
-                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para social-icons opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <SiLeetcode size={30} />
               </Link>
               <Link
                 href={personalData.twitter}
                 target="_blank"
-                className="para opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
+                className="para social-icons opacity-0 transition-all text-pink-500 hover:scale-125 duration-300"
               >
                 <FaTwitterSquare size={30} />
               </Link>
