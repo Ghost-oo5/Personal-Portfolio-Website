@@ -71,6 +71,9 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.4.0(react@18.3.1)
+      react-parallax-tilt:
+        specifier: ^1.7.298
+        version: 1.7.298(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-scroll:
         specifier: ^1.9.0
         version: 1.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2737,6 +2740,12 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+
+  react-parallax-tilt@1.7.298:
+    resolution: {integrity: sha512-onHiUJJDJEOiqU4QP7jYQP1d1+ivFLBrCLRxTfVU/NqAhP0kOgWr9YY5ataYcK0eusltX9GGIpIDh+D9PfCfPA==}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-scroll-to-top@3.0.0:
     resolution: {integrity: sha512-I/k45Ujai097du59tHBbzGxN7Lyc6K8Uc3IChq6HMXaBfB8N/rrfm055T5Yv0DWfVpf6pOFaBmhD3LOfH5unGw==}
@@ -6366,6 +6375,11 @@ snapshots:
       react: 18.3.1
 
   react-is@16.13.1: {}
+
+  react-parallax-tilt@1.7.298(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   react-scroll-to-top@3.0.0(react@18.3.1):
     dependencies:
