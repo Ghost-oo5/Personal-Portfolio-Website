@@ -1,1 +1,1316 @@
-if(!self.define){let e,s={};const a=(a,i)=>(a=new URL(a+".js",i).href,s[a]||new Promise((s=>{if("document"in self){const e=document.createElement("script");e.src=a,e.onload=s,document.head.appendChild(e)}else e=a,importScripts(a),s()})).then((()=>{let e=s[a];if(!e)throw new Error(`Module ${a} didn’t register its module`);return e})));self.define=(i,c)=>{const l=e||("document"in self?document.currentScript.src:"")||location.href;if(s[l])return;let r={};const n=e=>a(e,l),o={module:{uri:l},exports:r,require:n};s[l]=Promise.all(i.map((e=>o[e]||n(e)))).then((e=>(c(...e),r)))}}define(["./workbox-3c9d0171"],(function(e){"use strict";importScripts(),self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/Pwa-logos/Logo-v1-black-file-icon.png",revision:"8d27187ec7739a904b5f5e901f2d5ef5"},{url:"/Pwa-logos/Logo-v1-black-mini.png",revision:"f6ec5c8bf370f9dc9670aaa84e8b3239"},{url:"/Pwa-logos/Logo-v1-black.png",revision:"1effdf416529d92ba023f1b756472339"},{url:"/Pwa-logos/Logo-v1-white-mini.png",revision:"78922bfb95c56e6e1adaf62111866c2e"},{url:"/Pwa-logos/Logo-v1-white.png",revision:"e84339c72cfb0797e92a41952897083a"},{url:"/Pwa-logos/card.png",revision:"c59465cf2964b15728e3c3de30251bfa"},{url:"/Pwa-logos/icon512_maskable.png",revision:"fa47d778fe38081ad5488de670764414"},{url:"/Pwa-logos/icon512_rounded.png",revision:"0687756bf01dcc1a7dc9c3394ffc5042"},{url:"/Pwa-logos/new-icons/apple-icon-180.png",revision:"edd492a7281371eaae2316ee38e46bb7"},{url:"/Pwa-logos/new-icons/apple-splash-1125-2436.jpg",revision:"ffe882cf580e49720acc1b8bb4170c7d"},{url:"/Pwa-logos/new-icons/apple-splash-1136-640.jpg",revision:"12356f9495f7c6a20dd358152982b181"},{url:"/Pwa-logos/new-icons/apple-splash-1170-2532.jpg",revision:"959f13a82634664bf16f4fdefdbc25c4"},{url:"/Pwa-logos/new-icons/apple-splash-1179-2556.jpg",revision:"41c09dc294cd609b004b618fd2890ac9"},{url:"/Pwa-logos/new-icons/apple-splash-1206-2622.jpg",revision:"d0fe410dc13051ac795b6bf995fff496"},{url:"/Pwa-logos/new-icons/apple-splash-1242-2208.jpg",revision:"90ba11b7abfd5f59d4edba8f98bd16d5"},{url:"/Pwa-logos/new-icons/apple-splash-1242-2688.jpg",revision:"f03f23a15b2535910092ccb235d52fe5"},{url:"/Pwa-logos/new-icons/apple-splash-1284-2778.jpg",revision:"7a5b2dad212d3bc193056a4716d98d6f"},{url:"/Pwa-logos/new-icons/apple-splash-1290-2796.jpg",revision:"69fd9022e8eed4a0364f03d9377b86b5"},{url:"/Pwa-logos/new-icons/apple-splash-1320-2868.jpg",revision:"bfd57660b237212d94e18288a888ab60"},{url:"/Pwa-logos/new-icons/apple-splash-1334-750.jpg",revision:"88f5a58285293bc03eb6ac069679cb21"},{url:"/Pwa-logos/new-icons/apple-splash-1488-2266.jpg",revision:"fa0837fe529c38423e7a677b490dd461"},{url:"/Pwa-logos/new-icons/apple-splash-1536-2048.jpg",revision:"f21492254664b5f917ee1b0c07137fa2"},{url:"/Pwa-logos/new-icons/apple-splash-1620-2160.jpg",revision:"87f7fc1ce557f1196842840f940c326f"},{url:"/Pwa-logos/new-icons/apple-splash-1640-2360.jpg",revision:"98e284e0dea7a6345e322139b9f245c4"},{url:"/Pwa-logos/new-icons/apple-splash-1668-2224.jpg",revision:"ee9012f5526bb8b664d0aeb2986d1da9"},{url:"/Pwa-logos/new-icons/apple-splash-1668-2388.jpg",revision:"e0ad397c2145f9391c553bc602fb92ee"},{url:"/Pwa-logos/new-icons/apple-splash-1792-828.jpg",revision:"38b39e8c0d21d2c07c7c5b1ab65f7e43"},{url:"/Pwa-logos/new-icons/apple-splash-2048-1536.jpg",revision:"d04682a3b08c9bf5bb74d4309c0869dd"},{url:"/Pwa-logos/new-icons/apple-splash-2048-2732.jpg",revision:"c8ebd78a9f81978f2680362376fc38a5"},{url:"/Pwa-logos/new-icons/apple-splash-2160-1620.jpg",revision:"13f643ea5ef6877cebe4c8fb7e0b776c"},{url:"/Pwa-logos/new-icons/apple-splash-2208-1242.jpg",revision:"27ce06bad2725d981f7fae9db4061fb1"},{url:"/Pwa-logos/new-icons/apple-splash-2224-1668.jpg",revision:"ec959cc90187588153b31dcceb143bea"},{url:"/Pwa-logos/new-icons/apple-splash-2266-1488.jpg",revision:"9711582285e8e314d29da5969932d618"},{url:"/Pwa-logos/new-icons/apple-splash-2360-1640.jpg",revision:"9e809e5b866634a02af860b2ce6e04cb"},{url:"/Pwa-logos/new-icons/apple-splash-2388-1668.jpg",revision:"82c2858b511ec7d577282a0917efd4f8"},{url:"/Pwa-logos/new-icons/apple-splash-2436-1125.jpg",revision:"6734ed8c78e7035fa5b808014a2d5dc9"},{url:"/Pwa-logos/new-icons/apple-splash-2532-1170.jpg",revision:"7ecf11f8bbdc9e588b1c850bbae2742d"},{url:"/Pwa-logos/new-icons/apple-splash-2556-1179.jpg",revision:"0316a00703edba8210a2c3b38cd84a23"},{url:"/Pwa-logos/new-icons/apple-splash-2622-1206.jpg",revision:"8f3b0d255462a62b7a08cf0702dab1e7"},{url:"/Pwa-logos/new-icons/apple-splash-2688-1242.jpg",revision:"7f963cab35863f0a66b426df3a24488a"},{url:"/Pwa-logos/new-icons/apple-splash-2732-2048.jpg",revision:"ec69cb09e7b18979698f35d45f9e0872"},{url:"/Pwa-logos/new-icons/apple-splash-2778-1284.jpg",revision:"da3e27acf38197b2db41283be5fab0ba"},{url:"/Pwa-logos/new-icons/apple-splash-2796-1290.jpg",revision:"42932e0ef0673f6a632b9b211af3d203"},{url:"/Pwa-logos/new-icons/apple-splash-2868-1320.jpg",revision:"42dca6d934f10f1208d8653eb7dc996b"},{url:"/Pwa-logos/new-icons/apple-splash-640-1136.jpg",revision:"e3f66717716617259e9b7e99220503aa"},{url:"/Pwa-logos/new-icons/apple-splash-750-1334.jpg",revision:"d5e25cefe26969fe1a64593ae2a662aa"},{url:"/Pwa-logos/new-icons/apple-splash-828-1792.jpg",revision:"6d4a6c82b799d577a09b2ce1148c9d1e"},{url:"/Pwa-logos/new-icons/manifest-icon-192.maskable.png",revision:"54bd4a67a8e4c964c6f2ef915c927dc3"},{url:"/Pwa-logos/new-icons/manifest-icon-512.maskable.png",revision:"e4cf8e7edd6d2eea0a98094210d39155"},{url:"/_next/static/Gz_r9WloajiWWrjleG1l9/_buildManifest.js",revision:"4466d26783028165609ff6e466b161ee"},{url:"/_next/static/Gz_r9WloajiWWrjleG1l9/_ssgManifest.js",revision:"b6652df95db52feb4daf4eca35380933"},{url:"/_next/static/chunks/12-206c74efcb835f44.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/16a011e1-bf843969a0e4c976.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/173-90f07a4ee0f88a8e.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/18-0790e03778588e46.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/1ac3ffe0-3714322ad856c5ae.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/309-49268012b4bbe549.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/367-9576f2907088154f.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/377-048d84ab9d1d7bb2.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/39811124.0cb56c73e48d9e9b.js",revision:"0cb56c73e48d9e9b"},{url:"/_next/static/chunks/453.a1435593d85b7f3c.js",revision:"a1435593d85b7f3c"},{url:"/_next/static/chunks/790-d5c3126d6f1d48df.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/840-f2fe7ed59b5efb07.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/8c0f1391-dc46013a007ec741.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/967-109823480bc71523.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/_not-found/page-7b4927fd4d4eef5d.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/components/about/page-d430da2685abb5a7.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/components/education/page-9f1b24e5c4c56920.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/components/experience/page-5f3290b37878374b.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/components/hero-section/page-34b9aa809cfca2a4.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/components/skills/page-ceaa1ee589fb46f3.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/layout-3a37516593889d6b.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/page-f7d509182f491b1e.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/projects/%5Bid%5D/page-104c38e5670e4a2f.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/app/projects/page-718cd4af18b371c5.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/d5b5b10f-a46561c15bca68c5.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/framework-adbf922d84f6cb13.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/main-1d5f280867afb69f.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/main-app-780faeccfbc960de.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/pages/_app-2a0e35eb04841930.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/pages/_error-6c3de6dc0f5a225c.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/chunks/polyfills-42372ed130431b0a.js",revision:"846118c33b2c0e922d7b3a7676f81f6f"},{url:"/_next/static/chunks/webpack-c3e2edd2219deb33.js",revision:"Gz_r9WloajiWWrjleG1l9"},{url:"/_next/static/css/bd0013df6fa13fde.css",revision:"bd0013df6fa13fde"},{url:"/_next/static/css/ea46330dfa9ce11f.css",revision:"ea46330dfa9ce11f"},{url:"/_next/static/media/4473ecc91f70f139-s.p.woff",revision:"78e6fc13ea317b55ab0bd6dc4849c110"},{url:"/_next/static/media/463dafcda517f24f-s.p.woff",revision:"cbeb6d2d96eaa268b4b5beb0b46d9632"},{url:"/_next/static/media/adobe-xd.f0c5ce4c.svg",revision:"0ee1cc5928c8db3e85c65e51e6525d6e"},{url:"/_next/static/media/adobeaudition.96b89ff6.svg",revision:"58f3d81d8e9264fc8df8cfde4cf58af1"},{url:"/_next/static/media/after-effects.4f10a51c.svg",revision:"241dc01a0aff9c60da913f5b6a65d0e4"},{url:"/_next/static/media/angular.397f2b6c.svg",revision:"7696d862bb70908392a79df5230ec110"},{url:"/_next/static/media/aws.8dff8f22.svg",revision:"b7f09ee2045ad700ccba4102f2e4155e"},{url:"/_next/static/media/azure.9c9dc7f7.svg",revision:"f548d3f1cd3e4faf1f0b7099db1a4907"},{url:"/_next/static/media/blender.eed352b2.svg",revision:"8b61b044e68e4a0e7c0b94654d4ae793"},{url:"/_next/static/media/bootstrap.9e6ddba8.svg",revision:"53b32f2e7321dcaa2a27c637c6e36b82"},{url:"/_next/static/media/bulma.5fcd03fd.svg",revision:"346e11a0bddfc1b06c07cc1596186d1c"},{url:"/_next/static/media/c.0ffdbd71.svg",revision:"e85538a5f40888dcbc932f14f03ae3aa"},{url:"/_next/static/media/canva.0344c508.svg",revision:"b8f13636be472787575c9a38a40d1c2a"},{url:"/_next/static/media/capacitorjs.ef35ab1a.svg",revision:"f406481aac55baee3cb09d8a858cd8c2"},{url:"/_next/static/media/coffeescript.c4e09c86.svg",revision:"188980bfae79e5e6115b2eb00ea97322"},{url:"/_next/static/media/cplusplus.d264bdc1.svg",revision:"f525a103eda91528ace5248914305d93"},{url:"/_next/static/media/csharp.7851ee36.svg",revision:"eaa9632e78db110e155c571e7bcd3742"},{url:"/_next/static/media/css.e5e99f36.svg",revision:"989a735cec29082b067dc389ea2da68a"},{url:"/_next/static/media/dart.ee3b2b6d.svg",revision:"6775917ea12c014f2459559b962b7dab"},{url:"/_next/static/media/deno.2e2b830f.svg",revision:"4b150ace63ac1e340780402489c9f53f"},{url:"/_next/static/media/django.0d24a6f2.svg",revision:"8c0e0365dbe471cb772c4d96eceda8a6"},{url:"/_next/static/media/docker.23787008.svg",revision:"7e6ccb94a73afd23c3960aef7e296210"},{url:"/_next/static/media/fastify.af94c3f5.svg",revision:"fb59f648c047ed2b322c28c951445dd4"},{url:"/_next/static/media/figma.00471f51.svg",revision:"8e60c911c41bc8c6166ddb414532893d"},{url:"/_next/static/media/firebase.20c6dcf8.svg",revision:"704986854726d329449f30664550f986"},{url:"/_next/static/media/flutter.49095fa4.svg",revision:"9ca247cd652b40ff125ee3c0a7657992"},{url:"/_next/static/media/gcp.05f3d772.svg",revision:"d2115a79cde7279b8d1769f76ec14e89"},{url:"/_next/static/media/gimp.d563c9d7.svg",revision:"f9df1ce5d3cbb84b2a5abd3a9a29960a"},{url:"/_next/static/media/git.21d80414.svg",revision:"e6b832b0c31b469c8fcdfd4f2c4f1d3b"},{url:"/_next/static/media/go.c93ed780.svg",revision:"adc194341db39b5cbaf53da38122de45"},{url:"/_next/static/media/graphql.3a7e3927.svg",revision:"b6b6c04bcc0e9f73b357dcd6036822a0"},{url:"/_next/static/media/haxe.32ac7bcf.svg",revision:"8b08228c47e3c6a081f4bba19007e8c4"},{url:"/_next/static/media/html.ed6aaa50.svg",revision:"68aab8d074270f9ee0a7e385519d98fa"},{url:"/_next/static/media/illustrator.7eb9c9f7.svg",revision:"6deb63cde26eab996119f0e442984c1c"},{url:"/_next/static/media/ionic.f459d036.svg",revision:"fede5c3abee4ba5015901a255e53b443"},{url:"/_next/static/media/java.31c00271.svg",revision:"dd071c0b9452691dffc27aae39ce7d80"},{url:"/_next/static/media/javascript.b472cbc1.svg",revision:"46524a43caf30828c17e38ec573dc5a3"},{url:"/_next/static/media/julia.c330fbca.svg",revision:"5a1447e927d55aac27779dfb4c155d43"},{url:"/_next/static/media/kotlin.02ff0930.svg",revision:"4ca0bb1e4556fd0f62cc6842d9520969"},{url:"/_next/static/media/lightroom.3238a8d1.svg",revision:"4a62a1bd9ed87f1e3b0352894eeda281"},{url:"/_next/static/media/logo.0bc81e29.png",revision:"e84339c72cfb0797e92a41952897083a"},{url:"/_next/static/media/markdown.58d59da0.svg",revision:"2c92d1b98fd7db382f1232823118537d"},{url:"/_next/static/media/materialui.2900e517.svg",revision:"16e051373d0089014e66365b82a9380f"},{url:"/_next/static/media/matlab.77f7303a.svg",revision:"d9f74f0a1b6fe9575b438de61755b9ea"},{url:"/_next/static/media/memsql.f40f9c44.svg",revision:"e4a5e511e3d7bcb57b8390a2fc0d376c"},{url:"/_next/static/media/microsoftoffice.974515ca.svg",revision:"733d1a4387ba008f27e784bde2c9b2e4"},{url:"/_next/static/media/mongoDB.d8d2b67f.svg",revision:"e7d230b7ad2cb1744a781ad63b10487f"},{url:"/_next/static/media/mysql.2ddb80d9.svg",revision:"2cf2fd30658ed833e714cf1fd682d120"},{url:"/_next/static/media/nextJS.99e26750.svg",revision:"b9159e822528599d52e216907227a0bd"},{url:"/_next/static/media/nginx.dd577355.svg",revision:"3868dbe51aafc3df8a240d58fe8fb392"},{url:"/_next/static/media/numpy.0fd80405.svg",revision:"961f7a1bd730836151b5687a91a3fe1c"},{url:"/_next/static/media/nuxtJS.0d94fb0c.svg",revision:"59fdf8e11c4231ac9353be8aa2d0fef3"},{url:"/_next/static/media/opencv.96c1a6d0.svg",revision:"b18a26d418342b335ac5129a45fa9129"},{url:"/_next/static/media/photoshop.c2d8557c.svg",revision:"dda9f7b1ca28d3d3e0ee20eff198bbef"},{url:"/_next/static/media/php.bdee88ab.svg",revision:"a6ce9f3d438bd4a39e9acae56eeb30b8"},{url:"/_next/static/media/picsart.c8403ac7.svg",revision:"467f568a277aa3b2c7751e51a6fe7376"},{url:"/_next/static/media/postgresql.1b536c2f.svg",revision:"58ecff980609fade0b1cb5f8ded6cef3"},{url:"/_next/static/media/premierepro.f608c54b.svg",revision:"78b22e7158a93a28eb2b7d0ab5e331e0"},{url:"/_next/static/media/python.4ef95129.svg",revision:"bcf6930fc92ab953201424bb0908e456"},{url:"/_next/static/media/pytorch.7c4e25e8.svg",revision:"5f2b7688dfcf98a41922dc5f6b74ffba"},{url:"/_next/static/media/react.512a3a7e.svg",revision:"7be113a51aa59fbe2be7ac966109e3de"},{url:"/_next/static/media/ruby.f8a4bb76.svg",revision:"ab4f7ad7c6790993a00c5b6f9994c145"},{url:"/_next/static/media/selenium.80aec726.svg",revision:"db9de5c67343d81db7ffedcf7618954c"},{url:"/_next/static/media/sketch.f176352b.svg",revision:"6129bbaf3c61e1bbb7e5ec033591992b"},{url:"/_next/static/media/strapi.e4741f5a.svg",revision:"c2c413f2e00734611ef38826c533ee1f"},{url:"/_next/static/media/svelte.b1b7be9c.svg",revision:"6275bb59e5ee52a6652185d7ea84ee3d"},{url:"/_next/static/media/swift.757616d9.svg",revision:"24e1c0382e569faf2ca47fa1c802a180"},{url:"/_next/static/media/tailwind.c0bbaf6f.svg",revision:"b6952af50c6e4db78abefc8d9a529a8b"},{url:"/_next/static/media/tensorflow.a44ae670.svg",revision:"e9e391585abd9c372c20c8b9b5bb08d9"},{url:"/_next/static/media/typescript.97711300.svg",revision:"8854b02a490d214fb564211c1cf531e2"},{url:"/_next/static/media/unity.4e0bcc82.svg",revision:"639e923cdca2c22431b25cb42f975345"},{url:"/_next/static/media/vitejs.b0428eab.svg",revision:"64d68c9e11c592778203b486575d6e8d"},{url:"/_next/static/media/vue.522784e9.svg",revision:"940fb2b1181eaac0546c5270ff383212"},{url:"/_next/static/media/vuetifyjs.88928116.svg",revision:"0fa842cba4f33f0851827e7937150239"},{url:"/_next/static/media/webix.61c9b31f.svg",revision:"8014b75ee0ced9b136ffb1b59e093c71"},{url:"/_next/static/media/wolframalpha.1ac762c0.svg",revision:"ac304980b06315ed7b541d6e22cd5054"},{url:"/_next/static/media/wordpress.9f06d992.svg",revision:"199652e448e77f58952b655a74b42956"},{url:"/logo.png",revision:"e84339c72cfb0797e92a41952897083a"},{url:"/lottie/build.json",revision:"a6ddf6e22242cad2ca6085b24d1c277f"},{url:"/lottie/code.json",revision:"ae769dfb5eafc645619f9279761e43ad"},{url:"/lottie/coding.json",revision:"9780a8f715b9a3accc2d2399551e0a44"},{url:"/lottie/contact.json",revision:"2d74c8213b82654fba5362749e289739"},{url:"/lottie/development.json",revision:"31f75da79676027a6a6384b4e7562eaf"},{url:"/lottie/education.json",revision:"13c1078ac32e1572de723b853d6d59ad"},{url:"/lottie/js.json",revision:"ad2ffff084c35a1ef8212677c89dbc34"},{url:"/lottie/lotti.json",revision:"c1bdff0f692923acf7c8301d5deac9fd"},{url:"/lottie/study.json",revision:"5e985e66436f52e7e9107e59bac9f127"},{url:"/pic.jpg",revision:"5948431dd38320968a5e9329ae7ae3e1"},{url:"/pic2.jpg",revision:"4f3a91718fdbf86db45eb721d2c9b0f6"},{url:"/placeholder/placeholder.png",revision:"c83aa10e488792c4e2e77a46ed396914"},{url:"/projects/AI-image-generator/AI-image-generator.mp4",revision:"09158a42bc43a2b85704bfb7f5e7626d"},{url:"/projects/gamehub/gamehub.png",revision:"5159c5a4f8303788381b859b69be6ae3"},{url:"/projects/juhuu/juhoo.png",revision:"6bb2f7cba70fe7e2e6de1c123541e3af"},{url:"/projects/juhuu/marketplace-juhuu.png",revision:"6247dd5164fa5da6528d829644c93f4d"},{url:"/projects/tasktable/task-table.png",revision:"78f9952215ee85ea7a22ad089c94f9cd"},{url:"/svg/common/blur-23.svg",revision:"a75aa61e5a246b6d47b0004a9d27309b"},{url:"/svg/common/grid.svg",revision:"4059253fedf8e205d870303d6129d239"},{url:"/svg/common/hero.svg",revision:"d33b61b8bd3f0dcce3b67c27f1273467"},{url:"/svg/common/section.svg",revision:"1118180cd02e6fd6a9804f27e92a5baf"},{url:"/svg/skills/adobe-xd.svg",revision:"0ee1cc5928c8db3e85c65e51e6525d6e"},{url:"/svg/skills/adobeaudition.svg",revision:"58f3d81d8e9264fc8df8cfde4cf58af1"},{url:"/svg/skills/after-effects.svg",revision:"241dc01a0aff9c60da913f5b6a65d0e4"},{url:"/svg/skills/angular.svg",revision:"7696d862bb70908392a79df5230ec110"},{url:"/svg/skills/aws.svg",revision:"b7f09ee2045ad700ccba4102f2e4155e"},{url:"/svg/skills/azure.svg",revision:"f548d3f1cd3e4faf1f0b7099db1a4907"},{url:"/svg/skills/blender.svg",revision:"8b61b044e68e4a0e7c0b94654d4ae793"},{url:"/svg/skills/bootstrap.svg",revision:"53b32f2e7321dcaa2a27c637c6e36b82"},{url:"/svg/skills/bulma.svg",revision:"346e11a0bddfc1b06c07cc1596186d1c"},{url:"/svg/skills/c.svg",revision:"e85538a5f40888dcbc932f14f03ae3aa"},{url:"/svg/skills/canva.svg",revision:"b8f13636be472787575c9a38a40d1c2a"},{url:"/svg/skills/capacitorjs.svg",revision:"f406481aac55baee3cb09d8a858cd8c2"},{url:"/svg/skills/coffeescript.svg",revision:"188980bfae79e5e6115b2eb00ea97322"},{url:"/svg/skills/cplusplus.svg",revision:"f525a103eda91528ace5248914305d93"},{url:"/svg/skills/csharp.svg",revision:"eaa9632e78db110e155c571e7bcd3742"},{url:"/svg/skills/css.svg",revision:"989a735cec29082b067dc389ea2da68a"},{url:"/svg/skills/dart.svg",revision:"6775917ea12c014f2459559b962b7dab"},{url:"/svg/skills/deno.svg",revision:"4b150ace63ac1e340780402489c9f53f"},{url:"/svg/skills/django.svg",revision:"8c0e0365dbe471cb772c4d96eceda8a6"},{url:"/svg/skills/docker.svg",revision:"7e6ccb94a73afd23c3960aef7e296210"},{url:"/svg/skills/fastify.svg",revision:"fb59f648c047ed2b322c28c951445dd4"},{url:"/svg/skills/figma.svg",revision:"8e60c911c41bc8c6166ddb414532893d"},{url:"/svg/skills/firebase.svg",revision:"704986854726d329449f30664550f986"},{url:"/svg/skills/flutter.svg",revision:"9ca247cd652b40ff125ee3c0a7657992"},{url:"/svg/skills/gcp.svg",revision:"d2115a79cde7279b8d1769f76ec14e89"},{url:"/svg/skills/gimp.svg",revision:"f9df1ce5d3cbb84b2a5abd3a9a29960a"},{url:"/svg/skills/git.svg",revision:"e6b832b0c31b469c8fcdfd4f2c4f1d3b"},{url:"/svg/skills/go.svg",revision:"adc194341db39b5cbaf53da38122de45"},{url:"/svg/skills/graphql.svg",revision:"b6b6c04bcc0e9f73b357dcd6036822a0"},{url:"/svg/skills/haxe.svg",revision:"8b08228c47e3c6a081f4bba19007e8c4"},{url:"/svg/skills/html.svg",revision:"68aab8d074270f9ee0a7e385519d98fa"},{url:"/svg/skills/illustrator.svg",revision:"6deb63cde26eab996119f0e442984c1c"},{url:"/svg/skills/ionic.svg",revision:"fede5c3abee4ba5015901a255e53b443"},{url:"/svg/skills/java.svg",revision:"dd071c0b9452691dffc27aae39ce7d80"},{url:"/svg/skills/javascript.svg",revision:"46524a43caf30828c17e38ec573dc5a3"},{url:"/svg/skills/julia.svg",revision:"5a1447e927d55aac27779dfb4c155d43"},{url:"/svg/skills/kotlin.svg",revision:"4ca0bb1e4556fd0f62cc6842d9520969"},{url:"/svg/skills/lightroom.svg",revision:"4a62a1bd9ed87f1e3b0352894eeda281"},{url:"/svg/skills/markdown.svg",revision:"2c92d1b98fd7db382f1232823118537d"},{url:"/svg/skills/materialui.svg",revision:"16e051373d0089014e66365b82a9380f"},{url:"/svg/skills/matlab.svg",revision:"d9f74f0a1b6fe9575b438de61755b9ea"},{url:"/svg/skills/memsql.svg",revision:"e4a5e511e3d7bcb57b8390a2fc0d376c"},{url:"/svg/skills/microsoftoffice.svg",revision:"733d1a4387ba008f27e784bde2c9b2e4"},{url:"/svg/skills/mongoDB.svg",revision:"e7d230b7ad2cb1744a781ad63b10487f"},{url:"/svg/skills/mysql.svg",revision:"2cf2fd30658ed833e714cf1fd682d120"},{url:"/svg/skills/nextJS.svg",revision:"b9159e822528599d52e216907227a0bd"},{url:"/svg/skills/nginx.svg",revision:"3868dbe51aafc3df8a240d58fe8fb392"},{url:"/svg/skills/numpy.svg",revision:"961f7a1bd730836151b5687a91a3fe1c"},{url:"/svg/skills/nuxtJS.svg",revision:"59fdf8e11c4231ac9353be8aa2d0fef3"},{url:"/svg/skills/opencv.svg",revision:"b18a26d418342b335ac5129a45fa9129"},{url:"/svg/skills/photoshop.svg",revision:"dda9f7b1ca28d3d3e0ee20eff198bbef"},{url:"/svg/skills/php.svg",revision:"a6ce9f3d438bd4a39e9acae56eeb30b8"},{url:"/svg/skills/picsart.svg",revision:"467f568a277aa3b2c7751e51a6fe7376"},{url:"/svg/skills/postgresql.svg",revision:"58ecff980609fade0b1cb5f8ded6cef3"},{url:"/svg/skills/premierepro.svg",revision:"78b22e7158a93a28eb2b7d0ab5e331e0"},{url:"/svg/skills/python.svg",revision:"bcf6930fc92ab953201424bb0908e456"},{url:"/svg/skills/pytorch.svg",revision:"5f2b7688dfcf98a41922dc5f6b74ffba"},{url:"/svg/skills/react.svg",revision:"7be113a51aa59fbe2be7ac966109e3de"},{url:"/svg/skills/ruby.svg",revision:"ab4f7ad7c6790993a00c5b6f9994c145"},{url:"/svg/skills/selenium.svg",revision:"db9de5c67343d81db7ffedcf7618954c"},{url:"/svg/skills/sketch.svg",revision:"6129bbaf3c61e1bbb7e5ec033591992b"},{url:"/svg/skills/sqlite.svg",revision:"23bf430b6b73e93205d7f72d9e125cef"},{url:"/svg/skills/strapi.svg",revision:"c2c413f2e00734611ef38826c533ee1f"},{url:"/svg/skills/svelte.svg",revision:"6275bb59e5ee52a6652185d7ea84ee3d"},{url:"/svg/skills/swift.svg",revision:"24e1c0382e569faf2ca47fa1c802a180"},{url:"/svg/skills/tailwind.svg",revision:"b6952af50c6e4db78abefc8d9a529a8b"},{url:"/svg/skills/tensorflow.svg",revision:"e9e391585abd9c372c20c8b9b5bb08d9"},{url:"/svg/skills/typescript.svg",revision:"8854b02a490d214fb564211c1cf531e2"},{url:"/svg/skills/unity.svg",revision:"639e923cdca2c22431b25cb42f975345"},{url:"/svg/skills/vitejs.svg",revision:"64d68c9e11c592778203b486575d6e8d"},{url:"/svg/skills/vue.svg",revision:"940fb2b1181eaac0546c5270ff383212"},{url:"/svg/skills/vuetifyjs.svg",revision:"0fa842cba4f33f0851827e7937150239"},{url:"/svg/skills/webix.svg",revision:"8014b75ee0ced9b136ffb1b59e093c71"},{url:"/svg/skills/wolframalpha.svg",revision:"ac304980b06315ed7b541d6e22cd5054"},{url:"/svg/skills/wordpress.svg",revision:"199652e448e77f58952b655a74b42956"}],{ignoreURLParametersMatching:[/^utm_/,/^fbclid$/]}),e.cleanupOutdatedCaches(),e.registerRoute("/",new e.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({response:e})=>e&&"opaqueredirect"===e.type?new Response(e.body,{status:200,statusText:"OK",headers:e.headers}):e}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-webfonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3})]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,new e.StaleWhileRevalidate({cacheName:"google-fonts-stylesheets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:2592e3})]}),"GET"),e.registerRoute(/\/_next\/static.+\.js$/i,new e.CacheFirst({cacheName:"next-static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/image\?url=.+$/i,new e.StaleWhileRevalidate({cacheName:"next-image",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp3|wav|ogg)$/i,new e.CacheFirst({cacheName:"static-audio-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp4|webm)$/i,new e.CacheFirst({cacheName:"static-video-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:48,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/data\/.+\/.+\.json$/i,new e.StaleWhileRevalidate({cacheName:"next-data",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.NetworkFirst({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({sameOrigin:e,url:{pathname:s}})=>!(!e||s.startsWith("/api/auth/callback")||!s.startsWith("/api/"))),new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({request:e,url:{pathname:s},sameOrigin:a})=>"1"===e.headers.get("RSC")&&"1"===e.headers.get("Next-Router-Prefetch")&&a&&!s.startsWith("/api/")),new e.NetworkFirst({cacheName:"pages-rsc-prefetch",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({request:e,url:{pathname:s},sameOrigin:a})=>"1"===e.headers.get("RSC")&&a&&!s.startsWith("/api/")),new e.NetworkFirst({cacheName:"pages-rsc",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({url:{pathname:e},sameOrigin:s})=>s&&!e.startsWith("/api/")),new e.NetworkFirst({cacheName:"pages",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute((({sameOrigin:e})=>!e),new e.NetworkFirst({cacheName:"cross-origin",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:3600})]}),"GET")}));
+if (!self.define) {
+  let e,
+    s = {};
+  const a = (a, i) => (
+    (a = new URL(a + ".js", i).href),
+    s[a] ||
+      new Promise((s) => {
+        if ("document" in self) {
+          const e = document.createElement("script");
+          (e.src = a), (e.onload = s), document.head.appendChild(e);
+        } else (e = a), importScripts(a), s();
+      }).then(() => {
+        let e = s[a];
+        if (!e) throw new Error(`Module ${a} didn’t register its module`);
+        return e;
+      })
+  );
+  self.define = (i, c) => {
+    const n =
+      e ||
+      ("document" in self ? document.currentScript.src : "") ||
+      location.href;
+    if (s[n]) return;
+    let d = {};
+    const r = (e) => a(e, n),
+      l = { module: { uri: n }, exports: d, require: r };
+    s[n] = Promise.all(i.map((e) => l[e] || r(e))).then((e) => (c(...e), d));
+  };
+}
+define(["./workbox-3c9d0171"], function (e) {
+  "use strict";
+  importScripts(),
+    self.skipWaiting(),
+    e.clientsClaim(),
+    e.precacheAndRoute(
+      [
+        {
+          url: "/Pwa-logos/Logo-v1-black-file-icon.png",
+          revision: "8d27187ec7739a904b5f5e901f2d5ef5",
+        },
+        {
+          url: "/Pwa-logos/Logo-v1-black-mini.png",
+          revision: "f6ec5c8bf370f9dc9670aaa84e8b3239",
+        },
+        {
+          url: "/Pwa-logos/Logo-v1-black.png",
+          revision: "1effdf416529d92ba023f1b756472339",
+        },
+        {
+          url: "/Pwa-logos/Logo-v1-white-mini.png",
+          revision: "78922bfb95c56e6e1adaf62111866c2e",
+        },
+        {
+          url: "/Pwa-logos/Logo-v1-white.png",
+          revision: "e84339c72cfb0797e92a41952897083a",
+        },
+        {
+          url: "/Pwa-logos/card.png",
+          revision: "c59465cf2964b15728e3c3de30251bfa",
+        },
+        {
+          url: "/Pwa-logos/icon512_maskable.png",
+          revision: "fa47d778fe38081ad5488de670764414",
+        },
+        {
+          url: "/Pwa-logos/icon512_rounded.png",
+          revision: "0687756bf01dcc1a7dc9c3394ffc5042",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-icon-180.png",
+          revision: "edd492a7281371eaae2316ee38e46bb7",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1125-2436.jpg",
+          revision: "ffe882cf580e49720acc1b8bb4170c7d",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1136-640.jpg",
+          revision: "12356f9495f7c6a20dd358152982b181",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1170-2532.jpg",
+          revision: "959f13a82634664bf16f4fdefdbc25c4",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1179-2556.jpg",
+          revision: "41c09dc294cd609b004b618fd2890ac9",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1206-2622.jpg",
+          revision: "d0fe410dc13051ac795b6bf995fff496",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1242-2208.jpg",
+          revision: "90ba11b7abfd5f59d4edba8f98bd16d5",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1242-2688.jpg",
+          revision: "f03f23a15b2535910092ccb235d52fe5",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1284-2778.jpg",
+          revision: "7a5b2dad212d3bc193056a4716d98d6f",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1290-2796.jpg",
+          revision: "69fd9022e8eed4a0364f03d9377b86b5",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1320-2868.jpg",
+          revision: "bfd57660b237212d94e18288a888ab60",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1334-750.jpg",
+          revision: "88f5a58285293bc03eb6ac069679cb21",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1488-2266.jpg",
+          revision: "fa0837fe529c38423e7a677b490dd461",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1536-2048.jpg",
+          revision: "f21492254664b5f917ee1b0c07137fa2",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1620-2160.jpg",
+          revision: "87f7fc1ce557f1196842840f940c326f",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1640-2360.jpg",
+          revision: "98e284e0dea7a6345e322139b9f245c4",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1668-2224.jpg",
+          revision: "ee9012f5526bb8b664d0aeb2986d1da9",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1668-2388.jpg",
+          revision: "e0ad397c2145f9391c553bc602fb92ee",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-1792-828.jpg",
+          revision: "38b39e8c0d21d2c07c7c5b1ab65f7e43",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2048-1536.jpg",
+          revision: "d04682a3b08c9bf5bb74d4309c0869dd",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2048-2732.jpg",
+          revision: "c8ebd78a9f81978f2680362376fc38a5",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2160-1620.jpg",
+          revision: "13f643ea5ef6877cebe4c8fb7e0b776c",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2208-1242.jpg",
+          revision: "27ce06bad2725d981f7fae9db4061fb1",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2224-1668.jpg",
+          revision: "ec959cc90187588153b31dcceb143bea",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2266-1488.jpg",
+          revision: "9711582285e8e314d29da5969932d618",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2360-1640.jpg",
+          revision: "9e809e5b866634a02af860b2ce6e04cb",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2388-1668.jpg",
+          revision: "82c2858b511ec7d577282a0917efd4f8",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2436-1125.jpg",
+          revision: "6734ed8c78e7035fa5b808014a2d5dc9",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2532-1170.jpg",
+          revision: "7ecf11f8bbdc9e588b1c850bbae2742d",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2556-1179.jpg",
+          revision: "0316a00703edba8210a2c3b38cd84a23",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2622-1206.jpg",
+          revision: "8f3b0d255462a62b7a08cf0702dab1e7",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2688-1242.jpg",
+          revision: "7f963cab35863f0a66b426df3a24488a",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2732-2048.jpg",
+          revision: "ec69cb09e7b18979698f35d45f9e0872",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2778-1284.jpg",
+          revision: "da3e27acf38197b2db41283be5fab0ba",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2796-1290.jpg",
+          revision: "42932e0ef0673f6a632b9b211af3d203",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-2868-1320.jpg",
+          revision: "42dca6d934f10f1208d8653eb7dc996b",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-640-1136.jpg",
+          revision: "e3f66717716617259e9b7e99220503aa",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-750-1334.jpg",
+          revision: "d5e25cefe26969fe1a64593ae2a662aa",
+        },
+        {
+          url: "/Pwa-logos/new-icons/apple-splash-828-1792.jpg",
+          revision: "6d4a6c82b799d577a09b2ce1148c9d1e",
+        },
+        {
+          url: "/Pwa-logos/new-icons/manifest-icon-192.maskable.png",
+          revision: "54bd4a67a8e4c964c6f2ef915c927dc3",
+        },
+        {
+          url: "/Pwa-logos/new-icons/manifest-icon-512.maskable.png",
+          revision: "e4cf8e7edd6d2eea0a98094210d39155",
+        },
+        {
+          url: "/Website-overview.png",
+          revision: "14e1dcd6ea8afc2ba2f5ac14623400fc",
+        },
+        {
+          url: "/_next/static/chunks/0b0944fb-3d4162093234560e.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/120-aed5bda3e3c1720d.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/16a011e1-33a07e2e6643b7ae.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/1727213d-a42b474dd82d63bc.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/246-ed44de9938a95e2f.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/39811124.a47c14390854f32f.js",
+          revision: "a47c14390854f32f",
+        },
+        {
+          url: "/_next/static/chunks/406-851b454c6817026b.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/418-f633dd495e624e97.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/427.169650f7fca1d087.js",
+          revision: "169650f7fca1d087",
+        },
+        {
+          url: "/_next/static/chunks/447-b57d6b3730792eac.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/460-8c63b0fe97f262e1.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/542-4d668d77851f949d.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/6661209f-432b7d780480f926.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/698.0ebff36c137674d6.js",
+          revision: "0ebff36c137674d6",
+        },
+        {
+          url: "/_next/static/chunks/714-5dcba03cf3b3e9f4.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/77b0f844-d64013b4e9cc9f59.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/813.c75db2a143d332f1.js",
+          revision: "c75db2a143d332f1",
+        },
+        {
+          url: "/_next/static/chunks/828-9696d973511c2580.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/8c0f1391-a7b9472b2e4f6f10.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/93-952d0ed28a11329e.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/953-47f0ade8027d9de3.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/_not-found/page-5538350fbb4654c7.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/components/about/page-54b3a51775bef5f7.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/components/education/page-c21dc8d275cee99c.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/components/experience/page-dc08a5bff2219404.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/components/hero-section/page-d51f951e7cf8ca68.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/components/skills/page-4010a665ec1acd13.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/layout-7e4688aa89a97729.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/page-5738e8c2aeb4b810.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/projects/%5Bid%5D/page-7adbe71c5dbcecb4.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/app/projects/page-9a96146c80b4f15d.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/bd01388b-4d6f1efa34a33c23.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/d5b5b10f-f7f9a5acfbcff834.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/framework-adbf922d84f6cb13.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/main-app-d982728bbc7776a4.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/main-df175dcba21b2d92.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/pages/_app-9de115000772ef5c.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/pages/_error-59cd4ad9b3f17203.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+          revision: "846118c33b2c0e922d7b3a7676f81f6f",
+        },
+        {
+          url: "/_next/static/chunks/webpack-346d313d50389cd0.js",
+          revision: "dtlsaKzLQmb7jtYj55JVH",
+        },
+        {
+          url: "/_next/static/css/bd0013df6fa13fde.css",
+          revision: "bd0013df6fa13fde",
+        },
+        {
+          url: "/_next/static/css/ffb8eba31f32a951.css",
+          revision: "ffb8eba31f32a951",
+        },
+        {
+          url: "/_next/static/dtlsaKzLQmb7jtYj55JVH/_buildManifest.js",
+          revision: "3f03e89a58fad14a2c23c36f509bbe24",
+        },
+        {
+          url: "/_next/static/dtlsaKzLQmb7jtYj55JVH/_ssgManifest.js",
+          revision: "b6652df95db52feb4daf4eca35380933",
+        },
+        {
+          url: "/_next/static/media/4473ecc91f70f139-s.p.woff",
+          revision: "78e6fc13ea317b55ab0bd6dc4849c110",
+        },
+        {
+          url: "/_next/static/media/463dafcda517f24f-s.p.woff",
+          revision: "cbeb6d2d96eaa268b4b5beb0b46d9632",
+        },
+        {
+          url: "/_next/static/media/adobe-xd.ea44eb0c.svg",
+          revision: "2599020077fb6fd0e0d1390cb88b734f",
+        },
+        {
+          url: "/_next/static/media/adobeaudition.6ac54c6a.svg",
+          revision: "f6d6a8cb589aa2c334a4a0a51b700ffa",
+        },
+        {
+          url: "/_next/static/media/after-effects.a9c72355.svg",
+          revision: "5ac6b6ec84d9722b662f2053f8dc5bd6",
+        },
+        {
+          url: "/_next/static/media/angular.4bea2a47.svg",
+          revision: "202b90d0e8701fe059e45c7cc1ad6230",
+        },
+        {
+          url: "/_next/static/media/aws.ac2256dd.svg",
+          revision: "bde4ea40a2cccb245e4729676e67a597",
+        },
+        {
+          url: "/_next/static/media/azure.56a922c9.svg",
+          revision: "e34a90d5fd5dc2c49186b91583d9abf2",
+        },
+        {
+          url: "/_next/static/media/blender.b6202fd4.svg",
+          revision: "e8a0299a69e50a4be9291d4f1c538164",
+        },
+        {
+          url: "/_next/static/media/bootstrap.c61c87af.svg",
+          revision: "79c2c41680cf98566b3a6dcb55bdbf00",
+        },
+        {
+          url: "/_next/static/media/bulma.ce338197.svg",
+          revision: "8f614cad8bfd05324ca6ccdcc599867a",
+        },
+        {
+          url: "/_next/static/media/c.8cdb6389.svg",
+          revision: "14bfb49f9e30f1051af25fdb3fe5f0e2",
+        },
+        {
+          url: "/_next/static/media/canva.85fed86e.svg",
+          revision: "0397c10ee20d803780d11e2ceee2c0ed",
+        },
+        {
+          url: "/_next/static/media/capacitorjs.cb203835.svg",
+          revision: "d07872114b1027b2d3617a74e7a122ff",
+        },
+        {
+          url: "/_next/static/media/coffeescript.22e2f988.svg",
+          revision: "f951912ac0ebe3acabf518df8fc899f7",
+        },
+        {
+          url: "/_next/static/media/cplusplus.d8945732.svg",
+          revision: "18ae83b098cad9d66cb603f83abc34b0",
+        },
+        {
+          url: "/_next/static/media/csharp.39ee24d6.svg",
+          revision: "299c3aa58b1c08d8021caa2bc555f79e",
+        },
+        {
+          url: "/_next/static/media/css.18a757c4.svg",
+          revision: "f12256ac816604f347d1950948034aa8",
+        },
+        {
+          url: "/_next/static/media/dart.de9a7e9f.svg",
+          revision: "9be754f9d6c69a79bef8dcf1ddec0ada",
+        },
+        {
+          url: "/_next/static/media/deno.7465a370.svg",
+          revision: "ff256ac71d367e7003e884dbe31b7331",
+        },
+        {
+          url: "/_next/static/media/django.47c79307.svg",
+          revision: "711c098d84605eeacdf7ede745b38157",
+        },
+        {
+          url: "/_next/static/media/docker.1fd925da.svg",
+          revision: "f98f38268d029b1fa260f085c85adda0",
+        },
+        {
+          url: "/_next/static/media/fastify.f1401f4e.svg",
+          revision: "43831f4abc1e54fa237d0aa334e67897",
+        },
+        {
+          url: "/_next/static/media/figma.1029bdd0.svg",
+          revision: "05d3f6848be5ba50cce960abbdc51f05",
+        },
+        {
+          url: "/_next/static/media/firebase.00a078b9.svg",
+          revision: "0887b85fc9385059d7192893a7c2d932",
+        },
+        {
+          url: "/_next/static/media/flutter.4975c7c9.svg",
+          revision: "80bad728963ac29d01a8768a01846551",
+        },
+        {
+          url: "/_next/static/media/gcp.10375a69.svg",
+          revision: "9691a2ffb853021d0dc5516517adddf4",
+        },
+        {
+          url: "/_next/static/media/gimp.7c585e39.svg",
+          revision: "0cd0bc06bd325eb299dbc244d3ba2e4b",
+        },
+        {
+          url: "/_next/static/media/git.50ce77c0.svg",
+          revision: "feb28c650b0068074d77d3fd1462b3a3",
+        },
+        {
+          url: "/_next/static/media/go.2398d0ba.svg",
+          revision: "22eda6c5b933ded38d6ef779d7e53205",
+        },
+        {
+          url: "/_next/static/media/graphql.1445d48c.svg",
+          revision: "7d4ee3f328bca46adecd3690648e8ffc",
+        },
+        {
+          url: "/_next/static/media/haxe.193d4b30.svg",
+          revision: "3211f80a5f294be739159cd943a11480",
+        },
+        {
+          url: "/_next/static/media/html.017306fd.svg",
+          revision: "4196766f94def747ba58d82292172697",
+        },
+        {
+          url: "/_next/static/media/illustrator.82356208.svg",
+          revision: "c986f0d411674b714fec2cb7e7430982",
+        },
+        {
+          url: "/_next/static/media/ionic.2515af68.svg",
+          revision: "ac7e1d64b359513a8a1860eea7413d55",
+        },
+        {
+          url: "/_next/static/media/java.28962703.svg",
+          revision: "637fe6af336f90a0df96022548000bb5",
+        },
+        {
+          url: "/_next/static/media/javascript.b181c09e.svg",
+          revision: "0484a8d2d45ffaad2834f59361d206fd",
+        },
+        {
+          url: "/_next/static/media/julia.e82a371c.svg",
+          revision: "4fd3f3fce433fc835aea5c5436a55c79",
+        },
+        {
+          url: "/_next/static/media/kotlin.de8eaa2b.svg",
+          revision: "1078bfd6b28e9707f5553ab97a2e6cf2",
+        },
+        {
+          url: "/_next/static/media/lightroom.dbe8fbea.svg",
+          revision: "bd3b8b21822712b404caee0a1966fc33",
+        },
+        {
+          url: "/_next/static/media/logo.0bc81e29.png",
+          revision: "e84339c72cfb0797e92a41952897083a",
+        },
+        {
+          url: "/_next/static/media/markdown.d252a99f.svg",
+          revision: "d66f22c08d6a74ab7a76f8a255f9791d",
+        },
+        {
+          url: "/_next/static/media/materialui.f63da241.svg",
+          revision: "53c8f867defac7bf24e5af56c50520b5",
+        },
+        {
+          url: "/_next/static/media/matlab.b345c227.svg",
+          revision: "7c6f889c03d7f0a8a14b728986aae8e5",
+        },
+        {
+          url: "/_next/static/media/memsql.fe5acef9.svg",
+          revision: "a370bd71ea8d72a1ad4da48ca6f606f5",
+        },
+        {
+          url: "/_next/static/media/microsoftoffice.c275d93f.svg",
+          revision: "b45374f1f6d25d82887a05ffde9d2f3b",
+        },
+        {
+          url: "/_next/static/media/mongoDB.bdbfe282.svg",
+          revision: "85be680745d838b53aa7d48a9097a6e3",
+        },
+        {
+          url: "/_next/static/media/mysql.f25ccd48.svg",
+          revision: "c57e7443428ab067d3545dd02c77e8f1",
+        },
+        {
+          url: "/_next/static/media/nextJS.5d08e3a4.svg",
+          revision: "9037feafa6bb03c2fc880a45aba63ea6",
+        },
+        {
+          url: "/_next/static/media/nginx.a985ae7e.svg",
+          revision: "e2b819e37f4c0da693c88bcf7d6da882",
+        },
+        {
+          url: "/_next/static/media/numpy.3c09ea44.svg",
+          revision: "7dda86e679b18029efd280f788143dbb",
+        },
+        {
+          url: "/_next/static/media/nuxtJS.b3618890.svg",
+          revision: "d433645968b3e47b2785a3d8dc4dffd3",
+        },
+        {
+          url: "/_next/static/media/opencv.777de634.svg",
+          revision: "6bb8c58e7ae6f2ff833ce75982ecdbcb",
+        },
+        {
+          url: "/_next/static/media/photoshop.11ddf3ae.svg",
+          revision: "816abc0ff4461221e6a0232ba76ebeab",
+        },
+        {
+          url: "/_next/static/media/php.92f5d4c3.svg",
+          revision: "7cd861ebce35a4b22924629a9616a9f1",
+        },
+        {
+          url: "/_next/static/media/picsart.8fc4adf4.svg",
+          revision: "f89fb5fa4eb40a2f47776c0e56aee144",
+        },
+        {
+          url: "/_next/static/media/postgresql.57f0feb0.svg",
+          revision: "0a61cf7ab417e5d57227116dbcee2cfc",
+        },
+        {
+          url: "/_next/static/media/premierepro.0450e213.svg",
+          revision: "e35506c55858f0b460460a94331b54f9",
+        },
+        {
+          url: "/_next/static/media/python.54da882d.svg",
+          revision: "fbea44889d262c328743da82176aa7d4",
+        },
+        {
+          url: "/_next/static/media/pytorch.e649f8fc.svg",
+          revision: "7eeaeef47160c90e685c39a99494f105",
+        },
+        {
+          url: "/_next/static/media/react.63480b3c.svg",
+          revision: "a3163ac7fe36281f1b7dc7a2d91a2b8b",
+        },
+        {
+          url: "/_next/static/media/ruby.734ec281.svg",
+          revision: "d34e79c5beee3399796e5e5f0243146a",
+        },
+        {
+          url: "/_next/static/media/selenium.d21aeb58.svg",
+          revision: "1b7ce531b73032b35798ba81c7907b52",
+        },
+        {
+          url: "/_next/static/media/sketch.c9e20e22.svg",
+          revision: "1c3ae957f61637c7d1d4a687ea13dab4",
+        },
+        {
+          url: "/_next/static/media/strapi.2c93db42.svg",
+          revision: "a0d8a6a8d7e3458916e9570c6cbe20b0",
+        },
+        {
+          url: "/_next/static/media/svelte.6406f9ac.svg",
+          revision: "ec68607813412c4831b3c3e34ba528f3",
+        },
+        {
+          url: "/_next/static/media/swift.6006c4be.svg",
+          revision: "19d95e72efbb01654f6bcc80f1fc2396",
+        },
+        {
+          url: "/_next/static/media/tailwind.0327ce72.svg",
+          revision: "dfa8abaecc34dcf850b3c33621b4834f",
+        },
+        {
+          url: "/_next/static/media/tensorflow.65f6ca51.svg",
+          revision: "76db955f7fbfdcedd66bd798d0a0c30c",
+        },
+        {
+          url: "/_next/static/media/typescript.e2083e1d.svg",
+          revision: "550fbd87250ac6fb68f390ab6ebab834",
+        },
+        {
+          url: "/_next/static/media/unity.9841984c.svg",
+          revision: "42c34404a7e4a5fd4998111876f69d90",
+        },
+        {
+          url: "/_next/static/media/vitejs.5da26425.svg",
+          revision: "6bf1686c0a8015ddbe30566f9bef7251",
+        },
+        {
+          url: "/_next/static/media/vue.763d0be3.svg",
+          revision: "87ef18a6a2f103efb1ca52306b5fa189",
+        },
+        {
+          url: "/_next/static/media/vuetifyjs.f11a1e4c.svg",
+          revision: "eeec0047f8e4bc071d983728c0067262",
+        },
+        {
+          url: "/_next/static/media/webix.9113f93c.svg",
+          revision: "a2ea4f7492e69ad1ba6e1fcf902edea8",
+        },
+        {
+          url: "/_next/static/media/wolframalpha.6aeeed81.svg",
+          revision: "33a2e5995a6f91010226fc009cd4fb85",
+        },
+        {
+          url: "/_next/static/media/wordpress.d1453069.svg",
+          revision: "f69da95c1adfb46ae4580f3dfea76fe3",
+        },
+        { url: "/logo.png", revision: "e84339c72cfb0797e92a41952897083a" },
+        {
+          url: "/lottie/build.json",
+          revision: "7f35591080c60b039576187683de32e3",
+        },
+        {
+          url: "/lottie/code.json",
+          revision: "cee313c8dea1e2ba5e82309d0209294f",
+        },
+        {
+          url: "/lottie/coding.json",
+          revision: "0649d95a6ec7f0dccfde0c48dd7662c1",
+        },
+        {
+          url: "/lottie/contact.json",
+          revision: "2d1bcce2fdc8035225cc961b42d77702",
+        },
+        {
+          url: "/lottie/development.json",
+          revision: "582c52ec2d8176476aa539d942d100a4",
+        },
+        {
+          url: "/lottie/education.json",
+          revision: "970c2d83617e2a69a10f853a8420b19e",
+        },
+        {
+          url: "/lottie/js.json",
+          revision: "183cef149aacbf5f127079633100b52a",
+        },
+        {
+          url: "/lottie/lotti.json",
+          revision: "3647405daf90aadd70e003ce51ae236a",
+        },
+        {
+          url: "/lottie/study.json",
+          revision: "c7f0f0aab6a33d8e8d0edf89e3b3c076",
+        },
+        { url: "/pic.jpg", revision: "5948431dd38320968a5e9329ae7ae3e1" },
+        { url: "/pic2.jpg", revision: "4f3a91718fdbf86db45eb721d2c9b0f6" },
+        { url: "/pic3.jpg", revision: "a8478bee9ff3d3f56fc5d6c0cd308c48" },
+        {
+          url: "/placeholder/placeholder.png",
+          revision: "c83aa10e488792c4e2e77a46ed396914",
+        },
+        {
+          url: "/projects/AI-image-generator/AI-image-generator.mp4",
+          revision: "09158a42bc43a2b85704bfb7f5e7626d",
+        },
+        {
+          url: "/projects/gamehub/gamehub.png",
+          revision: "5159c5a4f8303788381b859b69be6ae3",
+        },
+        {
+          url: "/projects/issue-tracker/dashboard.png",
+          revision: "99005cc5484e3790015cb98f948eb540",
+        },
+        {
+          url: "/projects/issue-tracker/issue-tracker.png",
+          revision: "06ec1892d2d85a66a08c725d40496c9f",
+        },
+        {
+          url: "/projects/issue-tracker/issues.png",
+          revision: "12f4ba31cae61690221974acac49b0eb",
+        },
+        {
+          url: "/projects/juhuu/juhoo.png",
+          revision: "6bb2f7cba70fe7e2e6de1c123541e3af",
+        },
+        {
+          url: "/projects/juhuu/marketplace-juhuu.png",
+          revision: "6247dd5164fa5da6528d829644c93f4d",
+        },
+        {
+          url: "/projects/tasktable/task-table.png",
+          revision: "78f9952215ee85ea7a22ad089c94f9cd",
+        },
+        {
+          url: "/svg/common/blur-23.svg",
+          revision: "57a6a91b33f834819ee485044cfea3f1",
+        },
+        {
+          url: "/svg/common/grid.svg",
+          revision: "e35c653979e3096f7093aa764a43f508",
+        },
+        {
+          url: "/svg/common/hero.svg",
+          revision: "6e796d1ea4e696821418e6114ab114b5",
+        },
+        {
+          url: "/svg/common/section.svg",
+          revision: "2cd106a53834a0474163d47516a0b8ee",
+        },
+        {
+          url: "/svg/skills/adobe-xd.svg",
+          revision: "2599020077fb6fd0e0d1390cb88b734f",
+        },
+        {
+          url: "/svg/skills/adobeaudition.svg",
+          revision: "f6d6a8cb589aa2c334a4a0a51b700ffa",
+        },
+        {
+          url: "/svg/skills/after-effects.svg",
+          revision: "5ac6b6ec84d9722b662f2053f8dc5bd6",
+        },
+        {
+          url: "/svg/skills/angular.svg",
+          revision: "202b90d0e8701fe059e45c7cc1ad6230",
+        },
+        {
+          url: "/svg/skills/aws.svg",
+          revision: "bde4ea40a2cccb245e4729676e67a597",
+        },
+        {
+          url: "/svg/skills/azure.svg",
+          revision: "e34a90d5fd5dc2c49186b91583d9abf2",
+        },
+        {
+          url: "/svg/skills/blender.svg",
+          revision: "e8a0299a69e50a4be9291d4f1c538164",
+        },
+        {
+          url: "/svg/skills/bootstrap.svg",
+          revision: "79c2c41680cf98566b3a6dcb55bdbf00",
+        },
+        {
+          url: "/svg/skills/bulma.svg",
+          revision: "8f614cad8bfd05324ca6ccdcc599867a",
+        },
+        {
+          url: "/svg/skills/c.svg",
+          revision: "14bfb49f9e30f1051af25fdb3fe5f0e2",
+        },
+        {
+          url: "/svg/skills/canva.svg",
+          revision: "0397c10ee20d803780d11e2ceee2c0ed",
+        },
+        {
+          url: "/svg/skills/capacitorjs.svg",
+          revision: "d07872114b1027b2d3617a74e7a122ff",
+        },
+        {
+          url: "/svg/skills/coffeescript.svg",
+          revision: "f951912ac0ebe3acabf518df8fc899f7",
+        },
+        {
+          url: "/svg/skills/cplusplus.svg",
+          revision: "18ae83b098cad9d66cb603f83abc34b0",
+        },
+        {
+          url: "/svg/skills/csharp.svg",
+          revision: "299c3aa58b1c08d8021caa2bc555f79e",
+        },
+        {
+          url: "/svg/skills/css.svg",
+          revision: "f12256ac816604f347d1950948034aa8",
+        },
+        {
+          url: "/svg/skills/dart.svg",
+          revision: "9be754f9d6c69a79bef8dcf1ddec0ada",
+        },
+        {
+          url: "/svg/skills/deno.svg",
+          revision: "ff256ac71d367e7003e884dbe31b7331",
+        },
+        {
+          url: "/svg/skills/django.svg",
+          revision: "711c098d84605eeacdf7ede745b38157",
+        },
+        {
+          url: "/svg/skills/docker.svg",
+          revision: "f98f38268d029b1fa260f085c85adda0",
+        },
+        {
+          url: "/svg/skills/fastify.svg",
+          revision: "43831f4abc1e54fa237d0aa334e67897",
+        },
+        {
+          url: "/svg/skills/figma.svg",
+          revision: "05d3f6848be5ba50cce960abbdc51f05",
+        },
+        {
+          url: "/svg/skills/firebase.svg",
+          revision: "0887b85fc9385059d7192893a7c2d932",
+        },
+        {
+          url: "/svg/skills/flutter.svg",
+          revision: "80bad728963ac29d01a8768a01846551",
+        },
+        {
+          url: "/svg/skills/gcp.svg",
+          revision: "9691a2ffb853021d0dc5516517adddf4",
+        },
+        {
+          url: "/svg/skills/gimp.svg",
+          revision: "0cd0bc06bd325eb299dbc244d3ba2e4b",
+        },
+        {
+          url: "/svg/skills/git.svg",
+          revision: "feb28c650b0068074d77d3fd1462b3a3",
+        },
+        {
+          url: "/svg/skills/go.svg",
+          revision: "22eda6c5b933ded38d6ef779d7e53205",
+        },
+        {
+          url: "/svg/skills/graphql.svg",
+          revision: "7d4ee3f328bca46adecd3690648e8ffc",
+        },
+        {
+          url: "/svg/skills/haxe.svg",
+          revision: "3211f80a5f294be739159cd943a11480",
+        },
+        {
+          url: "/svg/skills/html.svg",
+          revision: "4196766f94def747ba58d82292172697",
+        },
+        {
+          url: "/svg/skills/illustrator.svg",
+          revision: "c986f0d411674b714fec2cb7e7430982",
+        },
+        {
+          url: "/svg/skills/ionic.svg",
+          revision: "ac7e1d64b359513a8a1860eea7413d55",
+        },
+        {
+          url: "/svg/skills/java.svg",
+          revision: "637fe6af336f90a0df96022548000bb5",
+        },
+        {
+          url: "/svg/skills/javascript.svg",
+          revision: "0484a8d2d45ffaad2834f59361d206fd",
+        },
+        {
+          url: "/svg/skills/julia.svg",
+          revision: "4fd3f3fce433fc835aea5c5436a55c79",
+        },
+        {
+          url: "/svg/skills/kotlin.svg",
+          revision: "1078bfd6b28e9707f5553ab97a2e6cf2",
+        },
+        {
+          url: "/svg/skills/lightroom.svg",
+          revision: "bd3b8b21822712b404caee0a1966fc33",
+        },
+        {
+          url: "/svg/skills/markdown.svg",
+          revision: "d66f22c08d6a74ab7a76f8a255f9791d",
+        },
+        {
+          url: "/svg/skills/materialui.svg",
+          revision: "53c8f867defac7bf24e5af56c50520b5",
+        },
+        {
+          url: "/svg/skills/matlab.svg",
+          revision: "7c6f889c03d7f0a8a14b728986aae8e5",
+        },
+        {
+          url: "/svg/skills/memsql.svg",
+          revision: "a370bd71ea8d72a1ad4da48ca6f606f5",
+        },
+        {
+          url: "/svg/skills/microsoftoffice.svg",
+          revision: "b45374f1f6d25d82887a05ffde9d2f3b",
+        },
+        {
+          url: "/svg/skills/mongoDB.svg",
+          revision: "85be680745d838b53aa7d48a9097a6e3",
+        },
+        {
+          url: "/svg/skills/mysql.svg",
+          revision: "c57e7443428ab067d3545dd02c77e8f1",
+        },
+        {
+          url: "/svg/skills/nextJS.svg",
+          revision: "9037feafa6bb03c2fc880a45aba63ea6",
+        },
+        {
+          url: "/svg/skills/nginx.svg",
+          revision: "e2b819e37f4c0da693c88bcf7d6da882",
+        },
+        {
+          url: "/svg/skills/numpy.svg",
+          revision: "7dda86e679b18029efd280f788143dbb",
+        },
+        {
+          url: "/svg/skills/nuxtJS.svg",
+          revision: "d433645968b3e47b2785a3d8dc4dffd3",
+        },
+        {
+          url: "/svg/skills/opencv.svg",
+          revision: "6bb8c58e7ae6f2ff833ce75982ecdbcb",
+        },
+        {
+          url: "/svg/skills/photoshop.svg",
+          revision: "816abc0ff4461221e6a0232ba76ebeab",
+        },
+        {
+          url: "/svg/skills/php.svg",
+          revision: "7cd861ebce35a4b22924629a9616a9f1",
+        },
+        {
+          url: "/svg/skills/picsart.svg",
+          revision: "f89fb5fa4eb40a2f47776c0e56aee144",
+        },
+        {
+          url: "/svg/skills/postgresql.svg",
+          revision: "0a61cf7ab417e5d57227116dbcee2cfc",
+        },
+        {
+          url: "/svg/skills/premierepro.svg",
+          revision: "e35506c55858f0b460460a94331b54f9",
+        },
+        {
+          url: "/svg/skills/python.svg",
+          revision: "fbea44889d262c328743da82176aa7d4",
+        },
+        {
+          url: "/svg/skills/pytorch.svg",
+          revision: "7eeaeef47160c90e685c39a99494f105",
+        },
+        {
+          url: "/svg/skills/react.svg",
+          revision: "a3163ac7fe36281f1b7dc7a2d91a2b8b",
+        },
+        {
+          url: "/svg/skills/ruby.svg",
+          revision: "d34e79c5beee3399796e5e5f0243146a",
+        },
+        {
+          url: "/svg/skills/selenium.svg",
+          revision: "1b7ce531b73032b35798ba81c7907b52",
+        },
+        {
+          url: "/svg/skills/sketch.svg",
+          revision: "1c3ae957f61637c7d1d4a687ea13dab4",
+        },
+        {
+          url: "/svg/skills/sqlite.svg",
+          revision: "71479666b13eecb8a516ee8069298476",
+        },
+        {
+          url: "/svg/skills/strapi.svg",
+          revision: "a0d8a6a8d7e3458916e9570c6cbe20b0",
+        },
+        {
+          url: "/svg/skills/svelte.svg",
+          revision: "ec68607813412c4831b3c3e34ba528f3",
+        },
+        {
+          url: "/svg/skills/swift.svg",
+          revision: "19d95e72efbb01654f6bcc80f1fc2396",
+        },
+        {
+          url: "/svg/skills/tailwind.svg",
+          revision: "dfa8abaecc34dcf850b3c33621b4834f",
+        },
+        {
+          url: "/svg/skills/tensorflow.svg",
+          revision: "76db955f7fbfdcedd66bd798d0a0c30c",
+        },
+        {
+          url: "/svg/skills/typescript.svg",
+          revision: "550fbd87250ac6fb68f390ab6ebab834",
+        },
+        {
+          url: "/svg/skills/unity.svg",
+          revision: "42c34404a7e4a5fd4998111876f69d90",
+        },
+        {
+          url: "/svg/skills/vitejs.svg",
+          revision: "6bf1686c0a8015ddbe30566f9bef7251",
+        },
+        {
+          url: "/svg/skills/vue.svg",
+          revision: "87ef18a6a2f103efb1ca52306b5fa189",
+        },
+        {
+          url: "/svg/skills/vuetifyjs.svg",
+          revision: "eeec0047f8e4bc071d983728c0067262",
+        },
+        {
+          url: "/svg/skills/webix.svg",
+          revision: "a2ea4f7492e69ad1ba6e1fcf902edea8",
+        },
+        {
+          url: "/svg/skills/wolframalpha.svg",
+          revision: "33a2e5995a6f91010226fc009cd4fb85",
+        },
+        {
+          url: "/svg/skills/wordpress.svg",
+          revision: "f69da95c1adfb46ae4580f3dfea76fe3",
+        },
+      ],
+      { ignoreURLParametersMatching: [/^utm_/, /^fbclid$/] },
+    ),
+    e.cleanupOutdatedCaches(),
+    e.registerRoute(
+      "/",
+      new e.NetworkFirst({
+        cacheName: "start-url",
+        plugins: [
+          {
+            cacheWillUpdate: async ({ response: e }) =>
+              e && "opaqueredirect" === e.type
+                ? new Response(e.body, {
+                    status: 200,
+                    statusText: "OK",
+                    headers: e.headers,
+                  })
+                : e,
+          },
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
+      new e.CacheFirst({
+        cacheName: "google-fonts-webfonts",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 4, maxAgeSeconds: 31536e3 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "google-fonts-stylesheets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 4, maxAgeSeconds: 604800 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "static-font-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 4, maxAgeSeconds: 604800 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "static-image-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 64, maxAgeSeconds: 2592e3 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\/_next\/static.+\.js$/i,
+      new e.CacheFirst({
+        cacheName: "next-static-js-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 64, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\/_next\/image\?url=.+$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "next-image",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 64, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:mp3|wav|ogg)$/i,
+      new e.CacheFirst({
+        cacheName: "static-audio-assets",
+        plugins: [
+          new e.RangeRequestsPlugin(),
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:mp4|webm)$/i,
+      new e.CacheFirst({
+        cacheName: "static-video-assets",
+        plugins: [
+          new e.RangeRequestsPlugin(),
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:js)$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "static-js-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 48, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:css|less)$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "static-style-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\/_next\/data\/.+\/.+\.json$/i,
+      new e.StaleWhileRevalidate({
+        cacheName: "next-data",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      /\.(?:json|xml|csv)$/i,
+      new e.NetworkFirst({
+        cacheName: "static-data-assets",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      ({ sameOrigin: e, url: { pathname: s } }) =>
+        !(!e || s.startsWith("/api/auth/callback") || !s.startsWith("/api/")),
+      new e.NetworkFirst({
+        cacheName: "apis",
+        networkTimeoutSeconds: 10,
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 16, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      ({ request: e, url: { pathname: s }, sameOrigin: a }) =>
+        "1" === e.headers.get("RSC") &&
+        "1" === e.headers.get("Next-Router-Prefetch") &&
+        a &&
+        !s.startsWith("/api/"),
+      new e.NetworkFirst({
+        cacheName: "pages-rsc-prefetch",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      ({ request: e, url: { pathname: s }, sameOrigin: a }) =>
+        "1" === e.headers.get("RSC") && a && !s.startsWith("/api/"),
+      new e.NetworkFirst({
+        cacheName: "pages-rsc",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      ({ url: { pathname: e }, sameOrigin: s }) => s && !e.startsWith("/api/"),
+      new e.NetworkFirst({
+        cacheName: "pages",
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 86400 }),
+        ],
+      }),
+      "GET",
+    ),
+    e.registerRoute(
+      ({ sameOrigin: e }) => !e,
+      new e.NetworkFirst({
+        cacheName: "cross-origin",
+        networkTimeoutSeconds: 10,
+        plugins: [
+          new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 3600 }),
+        ],
+      }),
+      "GET",
+    );
+});
