@@ -73,6 +73,32 @@ const HeroSection = () => {
       { autoAlpha: 1, y: 0, stagger: 0.3, duration: 0.6, ease: "power1.in" },
     );
 
+    if (nameRef.current) {
+      tl.fromTo(
+        nameRef.current,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.1,
+          repeat: 4,
+          yoyo: true,
+          ease: "power1.inOut",
+        },
+      )
+        .to(nameRef.current, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        })
+        .to(nameRef.current, {
+          y: 3,
+          repeat: -1,
+          yoyo: true,
+          duration: 0.8,
+          ease: "circ.inOut",
+        });
+    }
+
     tl.to({}, { duration: 1.5 });
 
     tl.to(
@@ -90,20 +116,6 @@ const HeroSection = () => {
 
     return () => {
       tl.kill();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!nameRef.current) return;
-    const nameTween = gsap.to(nameRef.current, {
-      x: 150,
-      yoyo: true,
-      repeat: -1,
-      duration: 1.2,
-      ease: "power1.inOut",
-    });
-    return () => {
-      nameTween.kill();
     };
   }, []);
 

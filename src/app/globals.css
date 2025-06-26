@@ -50,8 +50,6 @@ body {
   animation: wave 30s linear infinite;
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -108,8 +106,6 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -117,4 +113,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+.name {
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
 }
