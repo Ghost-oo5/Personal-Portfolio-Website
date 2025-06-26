@@ -1,5 +1,6 @@
 "use client";
 import { personalData } from "@/../utils/Data/PersonalData";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/dist/SplitText";
 import Image from "next/image";
@@ -10,10 +11,11 @@ import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
+
 const HeroSection = () => {
   const designationRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
+  const nameRef = useRef<HTMLElement>(null);
+  useGSAP(() => {
     gsap.registerPlugin(SplitText);
     const titles = personalData.designationAlternateWords;
     let index = 0;
@@ -24,7 +26,8 @@ const HeroSection = () => {
     const runAnimation = () => {
       const el = designationRef.current;
       if (!el) return;
-
+      el.textContent = "";
+      el.style.opacity = "1";
       el.textContent = titles[index];
       split = SplitText.create(el, { type: "chars" });
 
@@ -59,6 +62,35 @@ const HeroSection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    gsap.fromTo(
+      ".para",
+      { opacity: 0, y: 20 },
+      {
+        autoAlpha: 1,
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        stagger: 0.3,
+        ease: "power1.in",
+      },
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!nameRef.current) return;
+    const nameTween = gsap.to(nameRef.current, {
+      x: 150,
+      yoyo: true,
+      repeat: -1,
+      duration: 1.2,
+      ease: "power1.inOut",
+    });
+    return () => {
+      nameTween.kill();
+    };
+  }, []);
+
   return (
     <>
       <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
@@ -71,11 +103,17 @@ const HeroSection = () => {
         />
         <div className="grid grid-cols-1 max-sm:pt-8 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
           <div className="order-1 lg:order-1 flex flex-col items-start justify-center p-2 pb-5 md:pb-10 lg:pt-10">
-            <h1 className="para text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+            <h1 className="para invisible text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
               Hello,
               <br />
               This is{" "}
-              <span className=" text-pink-500">{personalData.name}</span>
+              <span
+                id="name"
+                className="name text-pink-500 filter drop-shadow-[0_0_8px_rgba(236,72,153,0.7)]"
+                ref={nameRef}
+              >
+                {personalData.name}
+              </span>
               {","}
               <br />
               I'm a Professional <br />
@@ -86,7 +124,7 @@ const HeroSection = () => {
                 {personalData.designation}{" "}
               </span>
               <span
-                className=" text-[#16f2b3] designationAlternate inline-block"
+                className=" text-[#16f2b3] designationAlternate inline-block opacity-0"
                 ref={designationRef}
                 id="designationAlternate"
               >
