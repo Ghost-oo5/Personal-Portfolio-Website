@@ -205,3 +205,9 @@ body {
   --btn-shadow: rgba(99, 102, 241, 0.7);
   --btn-glow: #e8eaff; /* a very pale indigo glow */
 }
+.description {
+  text-align: justify !important;
+}
+.description > * {
+  display: inline-block;
+}
