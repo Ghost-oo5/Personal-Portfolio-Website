@@ -118,3 +118,90 @@ body {
   transition: all 0.3s ease;
   text-shadow: 0 0 5px rgba(236, 72, 153, 0.5);
 }
+
+.custom-animated-button {
+  --btn-border: rgb(61, 106, 255);
+  --btn-bg-hover: rgb(61, 106, 255);
+  --btn-shadow: rgba(0, 142, 236, 0.815);
+  --btn-glow: #fff;
+
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid var(--btn-border);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 0.2s ease-in;
+}
+
+.custom-animated-button:hover {
+  background: var(--btn-bg-hover);
+  box-shadow: 0 0 30px 5px var(--btn-shadow);
+  transition: all 0.2s ease-out;
+}
+
+.custom-animated-button::before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: var(--btn-glow);
+  box-shadow: 0 0 50px 30px var(--btn-glow);
+  transform: skewX(-20deg);
+}
+
+.custom-animated-button:hover::before {
+  animation: sh02 0.5s 0s linear;
+}
+
+.custom-animated-button:active {
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s ease-in;
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.btn-blue {
+  --btn-border: rgb(61, 106, 255);
+  --btn-bg-hover: rgb(61, 106, 255);
+  --btn-shadow: rgba(0, 142, 236, 0.815);
+  --btn-glow: #fff;
+}
+
+.btn-pink {
+  --btn-border: rgb(236, 72, 153);
+  --btn-bg-hover: rgb(236, 72, 153);
+  --btn-shadow: rgba(236, 72, 153, 0.7);
+  --btn-glow: #ffeaf3;
+}
+.btn-indigo {
+  /* Tailwind’s indigo-500 = #6366f1 (RGB 99,102,241) */
+  --btn-border: rgb(99, 102, 241);
+  --btn-bg-hover: rgb(99, 102, 241);
+  --btn-shadow: rgba(99, 102, 241, 0.7);
+  --btn-glow: #e8eaff; /* a very pale indigo glow */
+}

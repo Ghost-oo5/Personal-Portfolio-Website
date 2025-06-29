@@ -1,6 +1,5 @@
-'use client'
+"use client";
 import { projectsData } from "@/../utils/Data/projects-data";
-import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
 import ProjectCard from "./project-card";
@@ -33,8 +32,10 @@ const Projects = () => {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-        <Link href={'/projects'}>
-          <Button variant='outline'  className="text-white bg-[#1A1443]" >See all projects <MoveUpRight/> </Button>
+        <Link href={"/projects"} className="custom-contact-link">
+          <button className="custom-animated-button flex items-center gap-2 !rounded-full">
+            See all projects <MoveUpRight />{" "}
+          </button>
         </Link>
       </div>
     </section>

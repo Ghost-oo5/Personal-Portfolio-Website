@@ -200,7 +200,13 @@ const HeroSection = () => {
               </Link>
             </div>
             <div className="flex items-center gap-3 py-1">
-              <Link
+              <Link href="#contact" className="custom-contact-link">
+                <button className="custom-animated-button flex items-center gap-2">
+                  Contact Me
+                  <RiContactsFill size={16} />
+                </button>
+              </Link>
+              {/* <Link
                 href="#contact"
                 className="bg-gradient-to-r to-pink-500 from-violet-600 p-[1px] rounded-full transition-all duration-300 hover:from-pink-500 hover:to-violet-600"
               >
@@ -208,16 +214,18 @@ const HeroSection = () => {
                   <span>Contact me</span>
                   <RiContactsFill size={16} />
                 </button>
-              </Link>
+              </Link> */}
 
               <Link
-                className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-base font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
+                className="custom-contact-link"
                 role="button"
                 target="_blank"
                 href={personalData.resume}
               >
-                <span>Get Resume</span>
-                <MdDownload size={16} />
+                <button className="custom-animated-button btn-pink flex items-center gap-2">
+                  Get Resume
+                  <MdDownload size={16} />
+                </button>
               </Link>
             </div>
           </div>
