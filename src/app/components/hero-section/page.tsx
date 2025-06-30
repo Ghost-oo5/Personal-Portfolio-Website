@@ -129,8 +129,8 @@ const HeroSection = () => {
           height={795}
           className="absolute -top-[98px] -z-10"
         />
-        <div className="grid grid-cols-1 max-sm:pt-8 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
-          <div className="order-1 lg:order-1 flex flex-col items-start justify-center p-2 pb-5 md:pb-10 lg:pt-10">
+        <div className="grid  max-sm:order-last grid-cols-1 max-sm:pt-8 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
+          <div className="max-lg:order-1 max-sm:gap-5 order-1 lg:order-1 flex flex-col items-start justify-center p-2 pb-5 md:pb-10 lg:pt-10">
             <h1 className="para invisible text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
               Hello,
               <br />
@@ -162,7 +162,7 @@ const HeroSection = () => {
                 |
               </span>
             </h1>
-            <div className="social max-md:my-6 md:my-12 flex items-center gap-5">
+            <div className="max-sm:mx-auto  social max-md:my-6 md:my-12 flex items-center gap-5">
               <Link
                 href={personalData.github}
                 target="_blank"
@@ -199,7 +199,7 @@ const HeroSection = () => {
                 <FaTwitterSquare size={30} />
               </Link>
             </div>
-            <div className="flex items-center gap-3 py-1">
+            <div className="max-sm:flex-col max-sm:w-full flex items-center gap-3 py-1">
               <Link href="#contact" className="custom-contact-link">
                 <button className="custom-animated-button flex items-center gap-2">
                   Contact Me
@@ -229,7 +229,7 @@ const HeroSection = () => {
               </Link>
             </div>
           </div>
-          <div>
+          <div className="max-lg:order-2">
             <Tilt
               className="background-stripes parallax-effect-glare-scale"
               glareEnable={true}
