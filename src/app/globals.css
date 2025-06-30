@@ -16,6 +16,14 @@ body {
   background-color: #0d1224;
 }
 
+body {
+  background-image: url("/svg/common/hero.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
 #sticky-card-1 {
   --index: 1;
 }
