@@ -66,18 +66,18 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <CardFooter className="flex justify-between pt-4">
         <Button
-          className="text-indigo-500 hover:underline text-base max-sm:text-sm"
+          className="custom-animated-button btn-indigo flex items-center gap-2 text-base max-sm:text-sm"
           disabled={!project.demo}
           variant="outline"
         >
-          <Globe />{" "}
+          <Globe />
           <Link href={project.demo} target="_blank" rel="noopener noreferrer">
             Demo
           </Link>
         </Button>
         <Button
           variant="outline"
-          className="text-indigo-500 hover:underline text-base max-sm:text-sm"
+          className="custom-animated-button btn-indigo flex items-center gap-2 text-base max-sm:text-sm"
           disabled={!project.code}
         >
           <Code />
