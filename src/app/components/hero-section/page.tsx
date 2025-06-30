@@ -3,7 +3,6 @@ import { personalData } from "@/../utils/Data/PersonalData";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/dist/SplitText";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
@@ -121,14 +120,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="relative flex flex-col items-center justify-between py-4 lg:py-12">
-        <Image
-          src="svg/common/hero.svg"
-          alt="Hero"
-          width={1572}
-          height={795}
-          className="absolute -top-[98px] -z-10"
-        />
+      <section className="flex flex-col items-center justify-between py-4 lg:py-12">
         <div className="grid  max-sm:order-last grid-cols-1 max-sm:pt-8 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
           <div className="max-lg:order-1 max-sm:gap-5 order-1 lg:order-1 flex flex-col items-start justify-center p-2 pb-5 md:pb-10 lg:pt-10">
             <h1 className="para invisible text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
