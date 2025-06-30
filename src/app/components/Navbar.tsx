@@ -1,5 +1,6 @@
 "use client";
 import img from "@/../public/logo.png";
+import { ModeToggle } from "@/components/ModeToggle";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -61,6 +62,7 @@ const Navbar = () => {
         </Link>
         <div className="hidden md:flex navbarItems space-x-5 md:text-xl lg:text-xl items-center">
           {navItems.map((item) => renderLink(item))}
+          <ModeToggle />
         </div>
         <div className="md:hidden">
           <button
